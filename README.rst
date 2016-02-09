@@ -18,5 +18,5 @@ Scoring
 -------
 Your code will be judged based on the following scoring system:
 
-  #. make it look nice ( we will judge how nice it is as part of the scoring system)
-  #. test coverage
+#. make it look nice ( we will judge how nice it is as part of the scoring system)
+#. test coverage
