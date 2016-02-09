@@ -1,6 +1,6 @@
 The Jubilant Pancake
 --------------------
-We would like to see a front end page that contains a two which when submitted
+We would like to see a front end page that contains a two textfield form which when submitted
 sends two strings to a backend service. The backend service computes the similarities between
 these two strings with an algorithm of your choosing. The computed output is then returned to the end user.
 
