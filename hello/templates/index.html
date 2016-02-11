@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div id="wrapper">
+  <div id="main">
+    <form action="" method="POST" id="testform">
+    <div class="container">
+
+      <img width="200px" src="http://www.successacademies.org/site/themes/success-academy/assets/img/logo_Success_Academy.png">
+      </br></br>
+      
+
+      <section>
+        <h2>Enter Input:</h2>
+        <ul class="input-list style-1 clearfix">
+          <li>
+            <input type="text" placeholder="Enter 1st value" name="value1">
+          </li>
+          <li>
+            <input type="text" placeholder="Enter 2nd value" name="value2">
+          </li>
+        </ul>
+      </section>
+
+
+    </div>
+    
+    <center></br></br>
+    <button class="button big green">Compare</button>
+    </center>
+    </form>
+  </div>
+  <h1 class="glow in tlt">Your result will appear here...</h1>
+    
+  <script>
+      $('.tlt').textillate();
+
+      $( "#testform" ).submit(function( event ) {
+        event.preventDefault();    
+        var frm = $("#testform");
+        var data = JSON.stringify(frm.serializeArray());
+
+        $.ajax({
+            url : "ajax/",
+            type: "POST",
+            data : {csrfmiddlewaretoken: '{{csrf_token}}', data: data},
+            dataType : "json",
+            success: function( data ){
+              $( ".tlt" ).removeData().html( data.response );
+              $( ".tlt" ).textillate('start');  
+            }
+        })
+      });
+  </script>
+
+  
+{% endblock %}
