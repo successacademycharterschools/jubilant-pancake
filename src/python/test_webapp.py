@@ -15,7 +15,6 @@ class TestStringComparitor(unittest.TestCase):
         req = Request.blank('')
         response = app(req)
 
-
     def test_post(self):
         app = StringComparitorApp()
         req = Request.blank('/compare')
