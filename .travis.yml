@@ -1,0 +1,12 @@
+language: python
+sudo: false
+
+# Versions of Python on which to test
+python:
+  - "2.7"
+
+# command to install dependencies
+install: "pip install -r requirements.test.txt"
+
+script:
+  - python ./src/python/test_webapp.py
