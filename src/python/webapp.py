@@ -6,7 +6,7 @@ from webob import dec
 from webob import exc
 
 
-class StringCompariter(object):
+class StringComparitorApp(object):
 
     def __init__(self):
         self.dispatch = {
@@ -16,19 +16,26 @@ class StringCompariter(object):
 
     @dec.wsgify
     def __call__(self, req):
-        return self.dispatch[req.method](req)
+        try:
+            return self.dispatch[req.method](req)
+        except KeyError:
+            fail_default = Response()
+            fail_default.status_int = 500
+            return fail_default
 
     @dec.wsgify
     def compare(self, req):
-        pass
+        response = Response()
+        return response
 
     @dec.wsgify
     def page(self, req):
-        pass
+        response = Response()
+        return response
 
 
 def main():
-    app = StringCompariter()
+    app = StringComparitorApp()
     from wsgiref.simple_server import make_server
     httpd = make_server('localhost', '5678', app)
     print 'Serving on http://localhost:5678'
