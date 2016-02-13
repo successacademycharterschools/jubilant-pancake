@@ -41,10 +41,10 @@ class StringComparitorApp(object):
 
 def run_server(app, config):
     from wsgiref.simple_server import make_server
-    host = config.get("site", "host")
-    port = config.get("site", "port")
-    httpd = make_server(host, port, app)
-    print 'Serving on http://localhost:5678'
+    hostname = config.get("site", "hostname")
+    port = int(config.get("site", "port"))
+    httpd = make_server(hostname, port, app)
+    print 'Serving on http://{}:{}'.format(hostname, port)
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:
