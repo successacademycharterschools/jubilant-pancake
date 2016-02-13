@@ -2,6 +2,7 @@ appnope==0.1.0
 astroid==1.4.4
 colorama==0.3.6
 decorator==4.0.9
+editdistance==0.2
 gnureadline==6.3.3
 lazy-object-proxy==1.2.1
 path.py==8.1.2

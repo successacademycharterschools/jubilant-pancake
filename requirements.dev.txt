@@ -5,6 +5,7 @@ backports.ssl-match-hostname==3.5.0.1
 certifi==2015.11.20.1
 colorama==0.3.6
 decorator==4.0.9
+editdistance==0.2
 functools32==3.2.3.post2
 gnureadline==6.3.3
 ipykernel==4.2.2
