@@ -1,7 +1,9 @@
 #!/usr/bin/env python2.7
 
 import ConfigParser
+import json
 
+import editdistance
 
 from webob import Request
 from webob import Response
@@ -29,7 +31,11 @@ class StringComparitorApp(object):
 
     @dec.wsgify
     def compare(self, req):
+        inputs = json.loads(req.body)
+        distance = editdistance.eval(inputs["source"], inputs["target"])
         response = Response()
+        response.type = 'application/json'
+        response.body = json.dumps({"edit_distance": int(distance)})
         return response
 
     @dec.wsgify

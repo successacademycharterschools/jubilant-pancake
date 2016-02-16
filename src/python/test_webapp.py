@@ -1,6 +1,7 @@
 #!/usr/bin/env python2.7
 
 import ConfigParser
+import json
 import unittest
 
 from webob import Request
@@ -31,7 +32,14 @@ class TestStringComparitor(unittest.TestCase):
         app = StringComparitorApp(self.app_config)
         req = Request.blank('/compare')
         req.method = 'POST'
+        args = {
+            "source": "kitten",
+            "target": "sitting",
+        }
+        req.body = json.dumps(args)
         response = app(req)
+        edit_distance = json.loads(response.body)["edit_distance"]
+        self.assertEqual(3, edit_distance)
 
     def test_put(self):
         app = StringComparitorApp(self.app_config)
