@@ -1,11 +1,17 @@
 #!/usr/bin/env python2.7
 
+"""
+This is the sample coding challenge for Success Academy.
+
+It's a simple Python app that runs a very small framework
+constructed on top of the WebOb libraries.
+"""
+
 import ConfigParser
 import json
 
 import editdistance
 
-from webob import Request
 from webob import Response
 from webob import dec
 
@@ -17,8 +23,8 @@ class StringComparitorApp(object):
             "GET": self.page,
             "POST": self.compare,
         }
-        with open(config.get("web", "page_filename"), "r") as pf:
-            self.page_content = pf.read()
+        with open(config.get("web", "page_filename"), "r") as page:
+            self.page_content = page.read()
 
     @dec.wsgify
     def __call__(self, req):
@@ -40,6 +46,10 @@ class StringComparitorApp(object):
 
     @dec.wsgify
     def page(self, req):
+        """
+        This is the response to a GET on the site - return the cached
+        webpage.
+        """
         response = Response()
         response.body = self.page_content
         return response
