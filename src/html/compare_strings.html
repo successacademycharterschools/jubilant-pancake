@@ -1,24 +1,45 @@
 <html>
   <head>
-    <title>Compare Strings</title>
+    <title>Jubilant Pancake</title>
   </head>
   <body>
-    <h1>Compare Strings</h1>
+    <script src="http://code.jquery.com/jquery-1.12.0.js"></script>
+    <script>var calculate_edit_distance = function () {
+      $.ajax({
+      url: "http://localhost:5678/",
+      type: "POST",
+      contentType: "application/json; charset=utf-8",
+      data: JSON.stringify({source: $("#sourcestring").val(),
+      target: $("#targetstring").val()}),
+      dataType: "json",
+      success: function( data ) {
+      $("#edit_distance_value").text(data["edit_distance"]);
+      
+      }
+      });
+    };</script>
+    <h1>Edit Difference</h1>
     <div>
-      <form action="localhost:5678" method="POST">
-        String 1
-        <input type="text" name="string1" />
-
-        String 2
-        <input type="text" name="string2" />
-
-
-        <input type="submit" value="Calculate difference" />
+      <form action="calculate_edit_distance">
+        Source String
+        <input type="text" id="sourcestring" />
+        <br />
+        Target String
+        <input type="text" id="targetstring" />
+        <br />
+        <input type="button" value="Calculate edit distance" onClick="calculate_edit_distance()" />
       </form>
     </div>
-    <div></div>
+    <div>
+      <table>
+        <tr>
+          <td>Edit Distance:</td><td id="edit_distance_value">Unspecified</td>
+        </tr>
+      </table>
+    </div>
+
     <address>
-      <a href="mailto:pcurry@gmail.com">Paul Curry</a>
+      Make complaints to: <a href="mailto:pcurry@gmail.com">Paul Curry</a>
     </address>
   </body>
 </html>
