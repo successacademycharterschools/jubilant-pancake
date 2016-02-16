@@ -19,7 +19,7 @@ considered valid:
 #. No page reload
 #. JSON dependent on both ends
 #. Use Python as the server-side programming language
-
+#. Do not use third-party libaries to compute the edit distance
 
 Scoring
 -------
