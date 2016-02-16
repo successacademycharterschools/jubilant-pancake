@@ -9,6 +9,7 @@ constructed on top of the WebOb libraries.
 
 import ConfigParser
 import json
+import os.path
 
 import editdistance
 
@@ -23,7 +24,10 @@ class StringComparitorApp(object):
             "GET": self.page,
             "POST": self.compare,
         }
-        with open(config.get("web", "page_filename"), "r") as page:
+        module_dir = os.path.dirname(os.path.abspath(__file__))
+        page_filename = config.get("web", "page_filename")
+        page_path = os.path.abspath(os.path.join(module_dir, page_filename))
+        with open(page_path, "r") as page:
             self.page_content = page.read()
 
     @dec.wsgify
