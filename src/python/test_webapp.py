@@ -2,12 +2,14 @@
 
 import ConfigParser
 import json
+import os
+import os.path
 import unittest
 
 from webob import Request
 from webob import Response
 
-from webapp import StringComparitorApp
+import webapp
 
 
 class TestStringComparitor(unittest.TestCase):
@@ -15,7 +17,10 @@ class TestStringComparitor(unittest.TestCase):
     def setUp(self):
         super(TestStringComparitor, self).setUp()
         self.app_config = ConfigParser.SafeConfigParser()
-        with open("defaults.cfg", "r") as config_defaults:
+        module_path = os.path.abspath(webapp.__file__)
+        module_dir = os.path.dirname(module_path)
+        config_path = os.path.join(module_dir, "defaults.cfg")
+        with open(config_path, "r") as config_defaults:
             self.app_config.readfp(config_defaults)
 
     def tearDown(self):
@@ -23,13 +28,13 @@ class TestStringComparitor(unittest.TestCase):
         super(TestStringComparitor, self).tearDown()
 
     def test_get(self):
-        app = StringComparitorApp(self.app_config)
+        app = webapp.StringComparitorApp(self.app_config)
         req = Request.blank('')
         response = app(req)
         self.assertNotEqual('', response.body)
 
     def test_post(self):
-        app = StringComparitorApp(self.app_config)
+        app = webapp.StringComparitorApp(self.app_config)
         req = Request.blank('/compare')
         req.method = 'POST'
         args = {
@@ -42,7 +47,7 @@ class TestStringComparitor(unittest.TestCase):
         self.assertEqual(3, edit_distance)
 
     def test_put(self):
-        app = StringComparitorApp(self.app_config)
+        app = webapp.StringComparitorApp(self.app_config)
         req = Request.blank('')
         req.method = 'PUT'
         response = app(req)
