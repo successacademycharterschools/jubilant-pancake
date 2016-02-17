@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <title>Edit Distance</title>
+  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <style>
+      section.spacer {
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="container spacer">
+      <div class="jumbotron">
+        <h1>Edit Distance</h1>
+      </div>
+    </section>
+
+    <section class="container">
+      <form id="distanceForm" class="form-inline">
+        <div class="form-group">
+          <label for="word1">Word1</label>
+          <input type="text" class="form-control" id="word1" maxlength="20">
+        </div>
+
+        <div class="form-group">
+          <label for="word2">Word2</label>
+          <input type="text" class="form-control" id="word2" maxlength="20">
+        </div>
+
+        <button class="btn btn-primary">
+          Calculate
+        </button>
+      </form>
+      <br/>
+
+      <div id="result">
+        <p class="text-center" id="resultText"></p>
+      </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="static/js/home.js"></script>
+  </body>
+</html>
