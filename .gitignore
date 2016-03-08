@@ -1,0 +1,8 @@
+*.pyc
+*.DS_Store
+*~
+*#
+.#*
+.settings/
+.idea/
+
