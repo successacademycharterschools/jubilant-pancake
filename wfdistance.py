@@ -1,7 +1,7 @@
 """
 This is our edit distance calculator.
 
-It uses which uses the Wagner & Fischer_algorithm
+It uses the Wagner & Fischer algorithm
 
 See https://en.wikipedia.org/wiki/Wagner%E2%80%93Fischer_algorithm
 """
