@@ -17,6 +17,35 @@
   <h1>This is a Jubilant Pancake.</h1>
   <img src="https://travelynns.files.wordpress.com/2013/04/img_9739.jpg?w=690&h=517"></img>
 
+<button type="button" onclick="loadDist('http://localhost:5555', updateDistance)">Calculate Distance</button>
+
+
+<p id="distance"></p>
+
+
+
+<script>
+var formdata = {
+  "string1":"string500",
+  "string2":"string9000",
+}
+
+function loadDist(url, cfunc) {
+  var xhttp;
+  xhttp=new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+      cfunc(xhttp);
+    }
+  };
+  xhttp.open("POST", url, true);
+  xhttp.send(JSON.stringify(formdata));
+}
+function updateDistance(xhttp) {
+  var respObj = JSON.parse(xhttp.responseText);
+  document.getElementById("distance").innerHTML = "The Levenshtein distance is " + respObj.dist;
+}
+</script>
 </body>
 
 </html>
