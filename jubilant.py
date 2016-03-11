@@ -4,7 +4,12 @@ import json
 
 PORT = 5555
 
-dist = {"dist": "2"}
+# dist = {"dist": "2"}
+
+def levenshtein(string1=None, string2=None):
+    dist = {"dist": "2"}
+    return dist
+
 
 class MyRequestHandler(BaseHTTPRequestHandler):
 
@@ -13,23 +18,29 @@ class MyRequestHandler(BaseHTTPRequestHandler):
             self.path = "index.html"
             self.send_response(200)
             self.send_header("Content-type:", "text/html")
+
+            # self.end_headers()  ##WTF?
             self.wfile.write(bytes("\n", 'utf-8'))
             f = open(self.path)
             self.wfile.write(bytes(f.read(), 'utf-8'))
             f.close()
+        return
 
+    def do_POST(self):
+        self.data_string = self.rfile.read(int(self.headers['Content-Length']))
+        print(self.data_string)
 
-        if self.path == "/measure":
-            #send response code:
-            self.send_response(200)
-            #send headers:
-            self.send_header("Content-type:", "text/html")
-            # self.end_headers()
-            # send a blank line to end headers:
-            self.wfile.write(bytes("\n", 'utf-8'))
+        levenshtein_args = json.loads(self.data_string.decode("utf-8"))
 
-            #send response:
-            self.wfile.write(bytes(json.dumps(dist), 'utf-8'))
+        self.send_response(200)
+        self.send_header("Content-type:", "text/html")
+
+        self.wfile.write(bytes("\n", 'utf-8'))
+
+        dist = levenshtein(levenshtein_args['string1'],
+                           levenshtein_args['string2'])
+        data = json.dumps(dist)
+        self.wfile.write(bytes(data, 'utf-8'))
         return
 
 
