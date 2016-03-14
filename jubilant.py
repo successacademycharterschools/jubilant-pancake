@@ -56,10 +56,13 @@ class MyRequestHandler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         self.data_string = self.rfile.read(int(self.headers['Content-Length']))
-        print(self.data_string)
 
         levenshtein_args = json.loads(self.data_string.decode("utf-8"))
-        print(levenshtein_args)
+
+        if ('string1' not in levenshtein_args and
+            'string2' not in levenshtein_args):
+            self.send_error(400,'Incorrect parameter passed in POST request')
+
 
         self.send_response(200)
         self.send_header("Content-type:", "text/html")
@@ -69,7 +72,6 @@ class MyRequestHandler(BaseHTTPRequestHandler):
 
         dist = {"dist": levenshtein(levenshtein_args['string1'],
                            levenshtein_args['string2'])}
-        print(dist)
         data = json.dumps(dist)
         self.wfile.write(bytes(data, 'utf-8'))
         return
