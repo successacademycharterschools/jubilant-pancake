@@ -4,11 +4,35 @@ import json
 
 PORT = 5555
 
-# dist = {"dist": "2"}
 
 def levenshtein(string1=None, string2=None):
-    dist = {"dist": "2"}
-    return dist
+    '''algorithm taken from wikipedia article here:
+    https://en.wikipedia.org/wiki/Levenshtein_distance
+    iterative version with two matrix rows'''
+
+    # handle cases where strings are the same or one is empty
+    if string1 == string2:
+        return 0
+    elif len(string1) == 0:
+        return len(string2)
+    elif len(string2) == 0:
+        return len(string1)
+
+    # create vectors
+    v0 = [None] * (len(string2) + 1)
+    v1 = [None] * (len(string2) + 1)
+    for i in range(len(v0)):
+        v0[i] = i
+    for i in range(len(string1)):
+        v1[0] = i + 1
+        #calculate cost
+        for j in range(len(string2)):
+            cost = 0 if string1[i] == string2[j] else 1
+            v1[j + 1] = min(v1[j] + 1, v0[j + 1] + 1, v0[j] + cost)
+        for j in range(len(v0)):
+            v0[j] = v1[j]
+
+    return v1[len(string2)]
 
 
 class MyRequestHandler(BaseHTTPRequestHandler):
