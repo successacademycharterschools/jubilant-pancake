@@ -24,7 +24,7 @@
 
   <p><h3>Please enter two strings below</h3></p>
 
-  <form>
+  <form id="input">
     String One: <br />
     <input type="text" name="string1"><br />
     String Two: <br />
@@ -39,12 +39,15 @@
 
 
 <script>
-var formdata = {
-  "string1":"string500",
-  "string2":"string9000",
+var formdata = {"string1": document.forms[0].string1.value,
+                "string2": document.forms[0].string2.value
 }
 
+
 function loadDist(url, cfunc) {
+  var formdata = {"string1": document.forms[0].string1.value,
+                  "string2": document.forms[0].string2.value
+};
   var xhttp;
   xhttp=new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
