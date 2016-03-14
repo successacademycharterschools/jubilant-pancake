@@ -38,6 +38,10 @@ def levenshtein(string1=None, string2=None):
 class MyRequestHandler(BaseHTTPRequestHandler):
 
     def do_GET(self):
+        if self.path != "/":
+            self.send_error(404,'File Not Found: %s' % self.path)
+            return
+
         if self.path == "/":
             self.path = "index.html"
             self.send_response(200)
