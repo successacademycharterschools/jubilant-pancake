@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+  <title>Jubilant Pancake</title>
+
+  <style type="text/css">
+    * { margin: 0; padding: 0;}
+   </style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+
+</head>
+
+<body>
+<div class="container">
+  <p>
+  <h1>This is a Jubilant Pancake</h1>
+  </p>
+
+  <p>
+  <img src="https://travelynns.files.wordpress.com/2013/04/img_9739.jpg?w=690&h=517"></img>
+  </p>
+
+  <p><h3>Please enter two strings below</h3></p>
+
+  <form id="input">
+    String One: <br />
+    <input type="text" name="string1"><br />
+    String Two: <br />
+    <input type="text" name="string2"><br />
+  </form>
+
+<button type="button" onclick="loadDist('http://localhost:5555', updateDistance)">Calculate Distance</button>
+
+
+<p id="distance"></p>
+</div>
+
+
+
+<script>
+
+function loadDist(url, cfunc) {
+  var formdata = {"string1": document.forms[0].string1.value,
+                  "string2": document.forms[0].string2.value
+};
+  var xhttp;
+  xhttp=new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+      cfunc(xhttp);
+    }
+  };
+  xhttp.open("POST", url, true);
+  xhttp.send(JSON.stringify(formdata));
+}
+function updateDistance(xhttp) {
+  var respObj = JSON.parse(xhttp.responseText);
+  document.getElementById("distance").innerHTML = "The Levenshtein distance is " + respObj.dist;
+}
+</script>
+</body>
+
+</html>
+
+
+
+
