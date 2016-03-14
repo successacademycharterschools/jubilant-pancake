@@ -32,7 +32,9 @@ def levenshtein(string1=None, string2=None):
         for j in range(len(v0)):
             v0[j] = v1[j]
 
-    return v1[len(string2)]
+    dist = {"dist": v1[len(string2)]}
+
+    return dist
 
 
 class MyRequestHandler(BaseHTTPRequestHandler):
@@ -55,7 +57,7 @@ class MyRequestHandler(BaseHTTPRequestHandler):
         # print(self.data_string)
 
         levenshtein_args = json.loads(self.data_string.decode("utf-8"))
-        print(levenshtein_args)
+        # print(levenshtein_args)
 
         self.send_response(200)
         self.send_header("Content-type:", "text/html")
@@ -65,6 +67,7 @@ class MyRequestHandler(BaseHTTPRequestHandler):
 
         dist = levenshtein(levenshtein_args['string1'],
                            levenshtein_args['string2'])
+        print(dist)
         data = json.dumps(dist)
         self.wfile.write(bytes(data, 'utf-8'))
         return
