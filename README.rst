@@ -8,6 +8,7 @@ A few notes:
 #. This is implemented in python 3.5.0
 #. To run the example, clone the repo after the pull request is accepted and cd to the directory
 #. Execute python3 jubilant.py
+#. Point your browser to localhost:5555
 #. There are no third-party library dependencies for python
 #. The HTML page requires skeleton.css and it is pulled in from a CDN
 
