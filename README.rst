@@ -13,11 +13,13 @@ As user **ubuntu**
 * git clone https://github.com/todmitry/jubilant-pancake.git
 * cd jubilant-pancake
 * conda env create -f config/requirements.yml
+* source activate py35c
 * chmod go-wrx config
 * source activate py35c
 * nohup python webapp.py &
 
 There is also a config/requirements.txt file for use with pip instead of Anaconda.
+
 
 Quick Build
 -----------
