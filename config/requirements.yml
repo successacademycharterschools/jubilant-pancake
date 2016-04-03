@@ -1,0 +1,18 @@
+name: py35c
+dependencies:
+- astroid=1.4.4=py35_0
+- colorama=0.3.7=py35_0
+- coverage=4.0.3=py35_0
+- lazy-object-proxy=1.2.1=py35_0
+- logilab-common=1.0.2=py35_0
+- pep8=1.7.0=py35_0
+- pip=8.1.1=py35_1
+- pyflakes=1.1.0=py35_0
+- pylint=1.5.4=py35_0
+- python=3.5.1=4
+- setuptools=20.3=py35_0
+- six=1.10.0=py35_0
+- tornado=4.3=py35_0
+- wheel=0.29.0=py35_0
+- wrapt=1.10.6=py35_0
+
