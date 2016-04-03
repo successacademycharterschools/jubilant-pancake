@@ -1,16 +1,18 @@
 Quick Setup: AWS Ubuntu 14.04 AMI with Anaconda
 ---------------------
 As user **ubuntu**
+
 * cd /home/ubuntu
 * wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-* sudo ./Miniconda3-latest-Linux-x86_64.sh
+* chmod u+x Miniconda3-latest-Linux-x86_64.sh
+* ./Miniconda3-latest-Linux-x86_64.sh
 * source .bashrc
 * sudo apt-get install git
 * mkdir -p apps
 * cd apps
 * git clone https://github.com/todmitry/jubilant-pancake.git
 * cd jubilant-pancake
-* sudo conda create -f config/requirements.yml
+* conda env create -f config/requirements.yml
 * chmod go-wrx config
 * source activate py35c
 * nohup python webapp.py &

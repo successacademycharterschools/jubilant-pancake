@@ -9,10 +9,9 @@ dependencies:
 - pip=8.1.1=py35_1
 - pyflakes=1.1.0=py35_0
 - pylint=1.5.4=py35_0
-- python=3.5.1=4
+- python=3.5.1
 - setuptools=20.3=py35_0
 - six=1.10.0=py35_0
 - tornado=4.3=py35_0
 - wheel=0.29.0=py35_0
 - wrapt=1.10.6=py35_0
-
