@@ -1,7 +1,10 @@
+from django.core.urlresolvers import resolve
 from django.test import TestCase
+from editdistances.views import home_page
 
 
-class SmokeTest(TestCase):
+class IndexTest(TestCase):
 
-    def test_bad_string_match(self):
-        self.assertEqual('monty', 'python')
+    def test_root_url_resolves_to_home_page_view(self):
+        found = resolve('/')
+        self.assertEqual(found.func, home_page)
