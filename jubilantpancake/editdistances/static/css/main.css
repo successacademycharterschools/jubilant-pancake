@@ -1,0 +1,11 @@
+.placeholder{
+    visibility: hidden;
+    text-align: center;
+    min-height: 46px;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #FFD3AA;
+    line-height: 1.3333333;
+    border-radius: 6px;
+    font-size: large;
+}

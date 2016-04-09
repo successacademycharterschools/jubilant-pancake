@@ -6,18 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="static/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="static/css/main.css" rel="stylesheet">
     <title>Jubilant Pancake</title>
 </head>
 <body>
-    <h1>Edit distance calculator</h1>
-    <p>
-        Get the minimum edit distance between 2 inputs.
-    </p>
-    <input type="text" value="" id="input_1" name="input_1" />
-    <div class="placeholder">
-        <span id="edit_distance"></span>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 jumbotron">
+                <h1>Jubilant Pancake</h1>
+                <p>Get the minimum edit distance between 2 inputs.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <input class="input-lg" type="text" value="" id="input_1" placeholder="Enter string" name="input_1" />
+            </div>
+            <div class="col-md-4">
+                <input class="input-lg"  type="text" value="" id="input_2" placeholder="Enter string" name="input_2" />
+            </div>
+            <div class="col-md-2">
+                <input class="input-lg btn btn-default"  type="submit" value="Get edit distance" />
+            </div>
+            <div class="col-md-2 placeholder-wrapper">
+                <div id="edit_distance" class="placeholder">
+                    <span></span>
+                </div>
+            </div>
+        </div>
     </div>
-    <input type="text" value="" id="input_2" name="input_2" />
     <script src="static/js/jquery.min.js"></script>
 </body>
 </html>
