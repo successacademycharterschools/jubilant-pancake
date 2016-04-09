@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 import unittest
 
 
@@ -17,12 +18,23 @@ class NewVisitorTest(unittest.TestCase):
 
         # User sees page title
         self.assertIn('Jubilant Pancake', self.browser.title)
-        self.fail('Finish test! Pancake not fully jubilant operational')
 
         # User sees a paragraph about the site
+        description_text = self.browser.find_element_by_tag_name('p').text
+        self.assertIn('edit distance', description_text)
+
         # User sees 2 text input fields and a centered placeholder
+        input_1 = self.browser.find_element_by_id('input_1')
+        input_2 = self.browser.find_element_by_id('input_2')
+        edit_distance_box = self.browser.find_element_by_id('placeholder').text
+        self.assertEqual(edit_distance_box, '')
+
         # User types into first input
+        input_1.send_keys('kitten')
+
         # User types into second input
+        input_2.send_keys('sitting')
+
         # User submits form
         # User sees placeholder contains minimum edit distance
 
@@ -30,6 +42,7 @@ class NewVisitorTest(unittest.TestCase):
         # User types into second input
         # User submits form
         # User sees placeholder contains minimum edit distance
+        self.fail('Finish test! Pancake not fully jubilant operational')
 
         # User quits browser
 if __name__ == '__main__':
