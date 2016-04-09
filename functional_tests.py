@@ -26,6 +26,7 @@ class NewVisitorTest(unittest.TestCase):
         # User sees 2 text input fields and a centered placeholder
         input_1 = self.browser.find_element_by_id('input_1')
         input_2 = self.browser.find_element_by_id('input_2')
+        submit_button = self.browser.find_element_by_css_selector('.submit')
         edit_distance_box = self.browser.find_element_by_id('edit_distance').text
         self.assertEqual(edit_distance_box, '')
 
@@ -36,7 +37,11 @@ class NewVisitorTest(unittest.TestCase):
         input_2.send_keys('sitting')
 
         # User submits form
+        submit_button.click()
+
         # User sees placeholder contains minimum edit distance
+        edit_distance_box = self.browser.find_element_by_id('edit_distance').text
+        self.assertEqual(edit_distance_box, '5')
 
         # User types into first input
         # User types into second input
