@@ -5,9 +5,7 @@ from django.http import HttpResponse, JsonResponse
 def home(request):
     if request.method == 'POST':
         distance = _distance(request)
-        response = JsonResponse({'edit_distance': distance})
-        #return str(response.content, encoding='UTF-8')
-        return response#.content
+        return JsonResponse({'edit_distance': distance})
     return render(request, 'home.html')
 
 

@@ -30,25 +30,25 @@ class NewVisitorTest(unittest.TestCase):
         edit_distance_box = self.browser.find_element_by_id('edit_distance').text
         self.assertEqual(edit_distance_box, '')
 
-        # User types into first input
+        # User types into inputs and submits form
         input_1.send_keys('kitten')
-
-        # User types into second input
         input_2.send_keys('sitting')
-
-        # User submits form
         submit_button.click()
 
         # User sees placeholder contains minimum edit distance
         edit_distance_box = self.browser.find_element_by_id('edit_distance').text
         self.assertEqual(edit_distance_box, '3')
 
-        # User types into first input
-        # User types into second input
-        # User submits form
-        # User sees placeholder contains minimum edit distance
-        self.fail('Finish test! Pancake not fully jubilant operational')
+        # User types same phrase into inputs and submits form
+        input_1.clear()
+        input_2.clear()
+        input_1.send_keys('harry')
+        input_2.send_keys('harry')
+        submit_button.click()
 
-        # User quits browser
+        # User sees placeholder contains minimum edit distance
+        edit_distance_box = self.browser.find_element_by_id('edit_distance').text
+        self.assertEqual(edit_distance_box, '0')
+
 if __name__ == '__main__':
     unittest.main(warnings='ignore')
