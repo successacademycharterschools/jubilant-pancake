@@ -16,15 +16,24 @@ class HomeTest(TestCase):
         request = HttpRequest()
         response = home(request)
         expected_html = render_to_string('home.html')
-        #self.assertEqual(response.content.decode(), expected_html)
         self.assertEqual(response.status_code, 200)
 
-    def test_home_page_can_retreve_POST_request(self):
+    def test_home_page_calculates_edit_dist_on_POST_request(self):
         request = HttpRequest()
         request.method = 'POST'
         request.POST['input_1'] = 'kitten'
         request.POST['input_2'] = 'sitting'
 
         response = home(request)
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.content, b'{"edit_distance": 5}')
+        content = response.content
+        self.assertEqual(content, b'{"edit_distance": 3}')
+
+    def test_home_page_calculates_exact_strings(self):
+        request = HttpRequest()
+        request.method = 'POST'
+        request.POST['input_1'] = 'kitten'
+        request.POST['input_2'] = 'kitten'
+
+        response = home(request)
+        content = response.content
+        self.assertEqual(content, b'{"edit_distance": 0}')
