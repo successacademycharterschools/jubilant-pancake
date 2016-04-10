@@ -1,9 +1,15 @@
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+"""
+Functional test or end-to-end tests.
+These simulate how a user would interact with the application.
+"""
 import unittest
+from selenium import webdriver
 
 
 class NewVisitorTest(unittest.TestCase):
+    """
+    Class of user interactions, simulated test, setup and breakdown
+    """
 
     def setUp(self):
         self.browser = webdriver.Firefox()
@@ -13,6 +19,9 @@ class NewVisitorTest(unittest.TestCase):
         self.browser.quit()
 
     def test_submit_form_returns_dist(self):
+        """
+        Simulates user interactions with application
+        """
         # User goes to Jubilant Pancake homepage
         self.browser.get('http://localhost:8000')
 
@@ -27,8 +36,8 @@ class NewVisitorTest(unittest.TestCase):
         input_1 = self.browser.find_element_by_id('input_1')
         input_2 = self.browser.find_element_by_id('input_2')
         submit_button = self.browser.find_element_by_css_selector('.submit')
-        edit_distance_box = self.browser.find_element_by_id('edit_distance').text
-        self.assertEqual(edit_distance_box, '')
+        edit_distance = self.browser.find_element_by_id('edit_distance').text
+        self.assertEqual(edit_distance, '')
 
         # User types into inputs and submits form
         input_1.send_keys('kitten')
@@ -36,8 +45,8 @@ class NewVisitorTest(unittest.TestCase):
         submit_button.click()
 
         # User sees placeholder contains minimum edit distance
-        edit_distance_box = self.browser.find_element_by_id('edit_distance').text
-        self.assertEqual(edit_distance_box, '3')
+        edit_distance = self.browser.find_element_by_id('edit_distance').text
+        self.assertEqual(edit_distance, '3')
 
         # User types same phrase into inputs and submits form
         input_1.clear()
@@ -47,8 +56,8 @@ class NewVisitorTest(unittest.TestCase):
         submit_button.click()
 
         # User sees placeholder contains minimum edit distance
-        edit_distance_box = self.browser.find_element_by_id('edit_distance').text
-        self.assertEqual(edit_distance_box, '0')
+        edit_distance = self.browser.find_element_by_id('edit_distance').text
+        self.assertEqual(edit_distance, '0')
 
 if __name__ == '__main__':
     unittest.main(warnings='ignore')
