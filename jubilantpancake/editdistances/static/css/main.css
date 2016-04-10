@@ -22,11 +22,11 @@
     position: absolute;
     display: block;
     width: 40%;
-    font-size: 90%;
 }
 
 a.submit{
     text-decoration: none;
+    text-align: center;
 }
 
 .col-container{
@@ -44,6 +44,9 @@ a.submit{
 
 .col-sm-12{
     margin-bottom: 20px;
+}
+.col-sm-12 .submit {
+    font-size: 90%;
 }
 .col-sm-12 p{
     margin-right: 10%;
