@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="row">
-            <form action="" method="post">{% csrf_token %}
+            <form action="/edit_distance" method="post">{% csrf_token %}
             <div class="col-md-4">
                 <input class="input-lg" type="text" value="" id="input_1" placeholder="Enter string" name="input_1" />
             </div>
@@ -26,8 +26,8 @@
                 <input class="input-lg"  type="text" value="" id="input_2" placeholder="Enter string" name="input_2" />
             </div>
             <div class="col-md-2">
-                <!--<a class="input-lg btn btn-default submit" href="#">Get edit distance</a>-->
-                <input class="input-lg btn btn-default submit"  type="submit" value="Get edit distance" />
+                <a class="input-lg btn btn-default submit" href="#">Get edit distance</a>
+                <!--<input class="input-lg btn btn-default submit"  type="submit" value="Get edit distance" />-->
             </div>
             <div class="col-md-2 placeholder-wrapper">
                 <div id="edit_distance" class="placeholder">
@@ -39,5 +39,24 @@
     </div>
     <script src="static/js/jquery.min.js"></script>
     <script src="static/js/csrf.js"></script>
+    <script src="static/js/main.js"></script>
+    <script>
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie != '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = jQuery.trim(cookies[i]);
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        var csrftoken = getCookie('csrftoken');
+    </script>
 </body>
 </html>
