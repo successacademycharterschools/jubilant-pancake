@@ -19,24 +19,29 @@
         </div>
         <div class="row">
             <form action="/edit_distance" method="post">{% csrf_token %}
-            <div class="col-md-4">
-                <input class="input-lg" type="text" value="" id="input_1" placeholder="Enter string" name="input_1" />
+            <div class="col-sm-12 col-md-4">
+                <div class="col-container">
+                    <input class="input-lg" type="text" value="" id="input_1" placeholder="Enter string" name="input_1" />
+                </div>
             </div>
-            <div class="col-md-4">
-                <input class="input-lg"  type="text" value="" id="input_2" placeholder="Enter string" name="input_2" />
+            <div class="col-sm-12 col-md-4">
+                <div class="col-container">
+                    <input class="input-lg"  type="text" value="" id="input_2" placeholder="Enter string" name="input_2" />
+                </div>
             </div>
-            <div class="col-md-2">
-                <a class="input-lg btn btn-default submit" href="#">Get edit distance</a>
-            </div>
-            <div class="col-md-2">
-                <div id="edit_distance" class="placeholder">
-                    <span></span>
+            <div class="col-sm-12 col-md-4">
+                <div class="col-container">
+                    <a class="submit" href="#">Get edit distance</a>
+                    <div id="edit_distance" class="placeholder pull-right">
+                        <span></span>
+                    </div>
                 </div>
             </div>
             </form>
         </div>
     </div>
     <script src="static/js/jquery.min.js"></script>
+    <script src="static/bootstrap/js/bootstrap.min.js"></script>
     <script src="static/js/csrf.js"></script>
     <script src="static/js/main.js"></script>
     <script>

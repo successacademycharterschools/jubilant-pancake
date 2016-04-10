@@ -1,11 +1,47 @@
-.placeholder{
-    visibility: hidden;
+.placeholder {
     text-align: center;
     min-height: 46px;
     padding: 10px;
-    font-size: 18px;
-    background-color: #FFD3AA;
     line-height: 1.3333333;
+    background-color: #fff;
     border-radius: 6px;
     font-size: large;
+    width: 40%;
+}
+
+.placeholder {
+    visibility: hidden;
+}
+
+.submit{
+    background-color: #fff;
+    color: #666;
+    min-height: 46px;
+    padding: 10px;
+    border-radius: 6px;
+    position: absolute;
+    display: block;
+    width: 40%;
+    font-size: 90%;
+}
+
+a.submit{
+    text-decoration: none;
+}
+
+.col-container{
+    padding: 20px;
+    background-color: #ddd;
+    border-radius: 6px;
+    min-height: 86px;
+    position: relative;
+    margin:auto;
+}
+
+.input-lg {
+    width: 100%;
+}
+
+.col-sm-12{
+    margin-bottom: 20px;
 }
