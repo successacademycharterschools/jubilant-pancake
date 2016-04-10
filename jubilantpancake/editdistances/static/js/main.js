@@ -1,8 +1,12 @@
 $(function() {
     var submit_btn = $('.submit');
     $('.submit').on('click', function(){
-        var input_1 = $('#input_1').val();
-        var input_2 = $('#input_2').val();
+        var input_1 = $.trim($('#input_1').val());
+        var input_2 = $.trim($('#input_2').val());
+        if(input_1 === "" || input_2 === ""){
+            alert('Both fields required');
+            return false;
+        }
 
         $.ajax({
             type: "POST",
@@ -21,6 +25,6 @@ $(function() {
                 alert('An error has occured');
             }
         })
-        return false
+        return false;
     });
 });
