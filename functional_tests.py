@@ -41,7 +41,7 @@ class NewVisitorTest(unittest.TestCase):
 
         # User sees placeholder contains minimum edit distance
         edit_distance_box = self.browser.find_element_by_id('edit_distance').text
-        self.assertEqual(edit_distance_box, '5')
+        self.assertEqual(edit_distance_box, '3')
 
         # User types into first input
         # User types into second input
