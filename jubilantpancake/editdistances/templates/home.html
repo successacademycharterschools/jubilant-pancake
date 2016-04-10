@@ -12,26 +12,28 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 col-md-12 jumbotron">
-                <h1>Jubilant Pancake</h1>
-                <p>Get the minimum edit distance between 2 inputs.</p>
+            <div class="col-sm-12 col-md-12">
+                <div class="header jumbotron">
+                    <h1>Jubilant Pancake</h1>
+                    <p>Get the minimum edit distance between 2 inputs.</p>
+                </div>
             </div>
         </div>
         <div class="row">
             <form action="/edit_distance" method="post">{% csrf_token %}
             <div class="col-sm-12 col-md-4">
                 <div class="col-container">
-                    <input class="input-lg" type="text" value="" id="input_1" placeholder="Enter string" name="input_1" />
+                    <input class="input" type="text" value="" id="input_1" placeholder="Enter string" name="input_1" />
                 </div>
             </div>
             <div class="col-sm-12 col-md-4">
                 <div class="col-container">
-                    <input class="input-lg"  type="text" value="" id="input_2" placeholder="Enter string" name="input_2" />
+                    <input class="input" type="text" value="" id="input_2" placeholder="Enter string" name="input_2" />
                 </div>
             </div>
             <div class="col-sm-12 col-md-4">
                 <div class="col-container">
-                    <a class="submit" href="#">Get edit distance</a>
+                    <a class="submit" href="#">Submit</a>
                     <div id="edit_distance" class="placeholder pull-right">
                         <span></span>
                     </div>
