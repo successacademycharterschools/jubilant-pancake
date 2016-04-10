@@ -45,3 +45,6 @@ a.submit{
 .col-sm-12{
     margin-bottom: 20px;
 }
+.col-sm-12 p{
+    margin-right: 10%;
+}
