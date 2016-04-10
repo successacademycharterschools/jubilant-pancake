@@ -28,7 +28,7 @@ class HomeTest(TestCase):
         response = home(request)
         self.assertEqual(response.status_code, 200)
 
-    def test_home_edit_dist_on_post(self):
+    def test_edit_distance_calculations(self):
         """
         returns json of edit distance of different
         words after receiving post of 2 input items
