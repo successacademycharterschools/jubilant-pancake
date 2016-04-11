@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="static/css/main.css" rel="stylesheet">
+    <title>Jubilant Pancake</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12">
+                <div class="header jumbotron">
+                    <h1>Jubilant Pancake</h1>
+                    <p>Get the minimum edit distance between 2 inputs.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <form action="/edit_distance" method="post">{% csrf_token %}
+            <div class="col-sm-12 col-md-4">
+                <div class="col-container">
+                    <input class="input" type="text" value="" id="input_1" placeholder="Enter string" name="input_1" />
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <div class="col-container">
+                    <input class="input" type="text" value="" id="input_2" placeholder="Enter string" name="input_2" />
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <div class="col-container">
+                    <a class="submit" href="#">Submit</a>
+                    <div id="edit_distance" class="placeholder pull-right">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="static/js/csrf.js"></script>
+    <script src="static/js/main.js"></script>
+    <script>
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie != '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = jQuery.trim(cookies[i]);
+                    if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        var csrftoken = getCookie('csrftoken');
+    </script>
+</body>
+</html>
