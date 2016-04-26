@@ -6,7 +6,7 @@ def levenshtein(a, b):
     (with minor adjustments and error checking)
     """
 
-    if a is None and b is None:
+    if a is None or b is None:
         # two values are required to compute the edit distance
         raise TypeError("Two strings must be provided")
 
