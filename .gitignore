@@ -1,0 +1,4 @@
+app/**/*.js
+app/**/*.map
+Angular2/node_modules
+Node/node_modules

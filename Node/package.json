@@ -1,0 +1,23 @@
+{
+  "name": "minimum-edit-distance-node",
+  "version": "1.0.0",
+  "description": "Back-end for calculating edit distance between two nodes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brian M Welkin",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "cors": "^2.7.1",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "nock": "^8.0.0",
+    "rewire": "^2.5.1",
+    "supertest": "^1.2.0"
+  }
+}

@@ -1,0 +1,23 @@
+<div class="container-fluid pageContent">
+				
+	<h1>Minimum Edit Distance Calculator</h1>
+
+	<div class="form-group">
+		<label for="inputString1">String 1</label>          
+		<input [(ngModel)]="string1" class="form-control">
+	</div>
+
+	<div class="form-group">
+		<label for="inputString2">String 2</label>          
+		<input [(ngModel)]="string2" class="form-control">
+	</div>
+
+	<div class="form-group">
+		<button (click)="onClick();" class="btn btn-primary btn-block">CALCULATE</button>
+	</div>
+
+	<div class="alert alert-{{messageMode}}"> 
+		{{message}}
+	</div>
+
+</div>
