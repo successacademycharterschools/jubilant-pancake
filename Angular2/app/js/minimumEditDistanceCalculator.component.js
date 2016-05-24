@@ -24,25 +24,31 @@ System.register(['angular2/core', './service/Utils.service'], function(exports_1
             MinimumEditDistanceCalculatorComponent = (function () {
                 function MinimumEditDistanceCalculatorComponent(_utilsService) {
                     this._utilsService = _utilsService;
+                    this.maximumTotalLength = 1920; // an approximate limit: 2048 byte IE limit minus aproximately 450byte minimum request length
+                    this.defaultMessage = 'Edit distance between these 2 strings will be calculated.';
                     this.string1 = '';
                     this.string2 = '';
                     this.message = '';
-                    this.messageMode = 'warning';
-                    this.message = 'Edit distance between these 2 strings will be calculated.';
+                    this.messageMode = '';
+                    this.display(this.defaultMessage);
                 }
                 MinimumEditDistanceCalculatorComponent.prototype.onClick = function () {
                     var _this = this;
-                    this.message = '';
-                    if (this.string1 === '' && this.string2 === '') {
-                        this.message += 'I did not need to make the call since both strings were empty and I could easily give the result which is 0. ';
+                    if (this.string1.length + this.string2.length > this.maximumTotalLength) {
+                        this.display('The strings are too long.', 'danger');
                     }
-                    else if (this.string1 === '') {
-                        this.message += "I did not need to make the call since the first string was empty and I could easily give the result which is " + this.string2.length + ". ";
+                    else {
+                        this.display('Calculating. Please wait.', 'warning');
+                        this._utilsService.getMinimumEditDistance(this.string1, this.string2).subscribe(function (data) { return _this.display("Server response is " + data.minimumEditDistance + ".", 'success'); }, function (error) { return _this.display('Something went terribly wrong. Please try again.', 'danger'); });
                     }
-                    else if (this.string2 === '') {
-                        this.message += "I did not need to make the call since the second string was empty and I could easily give the result which is " + this.string1.length + ". ";
-                    }
-                    this._utilsService.getMinimumEditDistance(this.string1, this.string2).subscribe(function (data) { _this.message += "Server response is " + data.minimumEditDistance + "."; _this.messageMode = 'success'; }, function (error) { _this.message = 'Something went terribly wrong. Please try again.'; _this.messageMode = 'danger'; });
+                };
+                MinimumEditDistanceCalculatorComponent.prototype.onKeyup = function () {
+                    this.display(this.defaultMessage);
+                };
+                MinimumEditDistanceCalculatorComponent.prototype.display = function (copy, mode) {
+                    if (mode === void 0) { mode = 'info'; }
+                    this.message = copy;
+                    this.messageMode = mode;
                 };
                 MinimumEditDistanceCalculatorComponent = __decorate([
                     core_1.Component({
