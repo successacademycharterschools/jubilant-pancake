@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Minimum Edit Distance</title>
+		
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="apple-mobile-web-app-capable" content="yes"/>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+		<meta name="author" content="Brian M. Welkin [welkin at nysphere.com]">
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<link href="/css/main.css" rel="stylesheet"> 
+		
+		<script src="js/lib/angular2/es6-shim.min.js"></script>
+		<script src="js/lib/angular2/system-polyfills.js"></script>
+		<script src="js/lib/angular2/angular2-polyfills.js"></script>
+		<script src="js/lib/angular2/system.src.js"></script>
+		<script src="js/lib/angular2/Rx.js"></script>
+		<script src="js/lib/angular2/angular2.dev.js"></script>
+		<script src="js/lib/angular2/http.dev.js"></script>
+		<script>
+			System.config({
+				packages: {
+					js: {
+						format: 'register',
+						defaultExtension: 'js'
+					}
+				}
+			});
+			System.import('js/boot')
+				.then(null, console.error.bind(console));
+		</script>
+
+	</head>
+	<body>
+
+		
+		
+		<div id="pageContainer">
+
+			<my-app>
+				<div id="launchScreen" class="container-fluid pageContent">
+				<h1>Demo by Brian M Welkin</h1>
+				<p>Loading...</p>
+				</div>
+			</my-app>
+
+		</div>
+
+	</body>
+</html>

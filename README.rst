@@ -5,26 +5,26 @@ sends two strings to a backend service. The backend service computes the edit di
 (returns the minimum number of operations required to transform one string into another). The computed output
 is then returned to the end user.
 
-Assignment Instructions
+Installing the Node app
 -----------------------
-Fork this repo and when you are done with the assignment submit a pull request. Write an email (with url to the pull request included) to our HR 
-indicating you are done and the solution is ready for code review.)
 
+In `Node` folder
 
-Constraints
------------
-You must meet the following constraints in order for the project to be
-considered valid:
+:code:`node install`
 
-#. No page reload
-#. JSON dependent on both ends
-#. Use Python as the server-side programming language
-#. Do not use third-party libaries to compute the edit distance
+:code:`node index.js`
 
-Scoring
--------
-Your code will be judged based on the following scoring system:
+This initializes the Node-powered front-end page on port 3000
 
-#. How well you've styled and used HTML/CSS on the frontend pages
-#. How well the project is tested
-#. How close your Python code adheres to PEP8 and PyLint ideals
+Installing the Angular app
+--------------------------
+
+In `Angular2` folder
+
+:code:`node install`
+
+:code:`gulp`
+
+This initializes the Angular-powered front-end page on port 8000
+
+*Alternatively, you can copy the contents of `Angular2/app` folder into `Node/public` folder. This way, you only need to run the Node app to view the page*

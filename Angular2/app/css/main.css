@@ -1,0 +1,30 @@
+body{
+	background-color: #555;
+}
+
+#pageContainer{
+	max-width:600px;
+	background-color: #f7f7f7;
+	margin:0;
+}
+h1{
+	font-size: 1.5em;
+	text-align: center;
+}
+
+@media all and (min-width:600px){
+	#pageContainer{
+		margin: 20px auto;
+		border-radius: 8px;
+		box-shadow: 0 0 32px #000;
+		background-color: #f7f7f7;
+	}
+	h1{
+		font-size: 2em;
+	}
+
+}
+
+#launchScreen p{
+	text-align: center;
+}
