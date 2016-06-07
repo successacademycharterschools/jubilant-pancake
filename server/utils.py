@@ -29,9 +29,6 @@ def med(str1, str2):
     elif len2 == 0:
         return len1
 
-    v1 = med(str1[:-1], str2) + 1
-    v2 = med(str1, str2[:-1]) + 1
-
     distance = min(med(str1[:-1], str2) + 1,
                    med(str1, str2[:-1]) + 1,
                    med(str1[:-1], str2[:-1]) + (int(str1[-1] != str2[-1]) * 2))
