@@ -16,11 +16,12 @@ import json
 from flask import Flask
 from flask import render_template
 from flask import request
+from flask import send_from_directory
 
-from server.utils import med
+from utils import med
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='../static')
 app.debug = True
 
 
@@ -58,6 +59,18 @@ def edit_distance():
 
     return json.dumps(result)
 
+
+@app.route('/static/<path:file_path>')
+def serve_static_file(file_path):
+    '''
+    Serve our static files.
+
+    Normally you'd want to do this through a "real" webserver like nginx for
+    better performance, but this is simpler and more portable.
+    '''
+    base_local_dir = os.path.join(os.path.abspath(os.path.dirname(__file__)),
+                                  '..', 'static')
+    return send_from_directory(base_local_dir, file_path)
 
 if __name__ == '__main__':
     app.run()
