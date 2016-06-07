@@ -1,3 +1,15 @@
 body {
+    background-color: #808080;
+}
+
+div.container {
+    background-color: #c0c0c0;
+}
+
+.outer.container {
     padding: 30px;
+}
+
+form.low-density input {
+    margin: 10px;
 }
