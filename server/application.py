@@ -13,7 +13,7 @@ from flask import Flask
 from flask import render_template
 from flask import request
 
-from utils import med
+from server.utils import med
 
 
 app = Flask(__name__)
