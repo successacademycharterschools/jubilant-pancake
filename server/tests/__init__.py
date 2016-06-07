@@ -73,7 +73,8 @@ class BaseTestCase(unittest.TestCase):
 
     def test_complex_substitution_med(self):
         '''
-        Make sure that we properly compute a more complex "real world" test case
+        Make sure that we properly compute a more complex "real world" test
+        case
         '''
         input_data = {
             'str1': 'polygonal',

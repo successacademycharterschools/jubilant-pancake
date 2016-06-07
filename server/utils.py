@@ -14,6 +14,7 @@ class memoized(object):
             self.cache[args] = self.func(*args)
         return self.cache[args]
 
+
 @memoized
 def med(str1, str2):
     '''
