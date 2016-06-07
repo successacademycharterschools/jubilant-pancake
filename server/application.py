@@ -13,6 +13,8 @@ from flask import Flask
 from flask import render_template
 from flask import request
 
+from utils import med
+
 
 app = Flask(__name__)
 app.debug = True
@@ -20,22 +22,35 @@ app.debug = True
 
 @app.route('/')
 def index():
+    '''
+    Load the base template
+    '''
     return render_template('index.html')
 
 @app.route('/api/edit-distance/', methods=['POST'])
 def edit_distance():
+    '''
+    Take two strings and return the minimum-edit-distance between them
+
+    Method: POST
+    Params:
+      - str1 - the first string we want to compare, if not provided, defaults to
+               ''
+      - str2 - the second string we want to compare, if not provided, defaults
+               to ''
+
+    Returns:
+      A JSON object with one key "steps" and an integer value representing the
+      edit distance between the two strings.
+    '''
     data = json.loads(request.data)
     str1 = data.get('str1', '')
     str2 = data.get('str2', '')
 
     result = {
-        'step_count': 3,
-        'steps': [
-            'a',
-            'ab',
-            'abc',
-        ],
+        'steps': med(str1, str2)
     }
+
     return json.dumps(result)
 
 
