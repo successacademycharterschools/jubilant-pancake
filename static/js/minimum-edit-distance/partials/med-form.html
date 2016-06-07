@@ -1,3 +1,8 @@
 <div>
-    <button ng-click="medCtrl.click_me();">Click Me!</button>
+	<form ng-submit="medCtrl.submit_form();">
+		<input type="text" ng-model="medCtrl.str1" />
+		<input type="text" ng-model="medCtrl.str2" />
+		<input type="submit" value="Calculate Minimum Edit Distance" />
+	</form>
+	<div ng-show="medCtrl.step_count">The minimum edit distance between between "{{ medCtrl.show_str1 }}" and "{{ medCtrl.show_str2 }}" is: <strong>{{ medCtrl.step_count }}</strong></div>
 </div>
