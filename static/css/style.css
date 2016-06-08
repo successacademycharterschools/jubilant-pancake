@@ -8,6 +8,7 @@ div.container {
 
 .outer.container {
     padding: 30px;
+    height: 100%;
 }
 
 form.low-density input {
