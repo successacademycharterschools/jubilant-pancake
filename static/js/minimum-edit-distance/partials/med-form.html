@@ -1,0 +1,11 @@
+<div class="text-center">
+    <form ng-submit="medCtrl.submit_form();" class="form-group low-density">
+        <input type="text" class="form-control" ng-model="medCtrl.str1" placeholder="Your first string" />
+        <input type="text" class="form-control" ng-model="medCtrl.str2" placeholder="Your second string" />
+        <input type="submit" class="form-control" value="Calculate Minimum Edit Distance" />
+    </form>
+    <div ng-show="medCtrl.show_results">
+        <h3>The minimum edit distance between between "{{ medCtrl.show_str1 }}" and "{{ medCtrl.show_str2 }}" is:</h3>
+        <h2>{{ medCtrl.step_count }}</h2>
+    </div>
+</div>
