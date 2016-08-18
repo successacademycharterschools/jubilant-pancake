@@ -7,7 +7,7 @@ is then returned to the end user.
 
 Assignment Instructions
 -----------------------
-Fork this repo and when you are done with the assignment submit a pull request. Write an email (with url to the pull request included) to our HR 
+Fork this repo and when you are done with the assignment submit a pull request. Write an email (with url to the pull request included) to our HR
 indicating you are done and the solution is ready for code review.)
 
 
@@ -18,13 +18,13 @@ considered valid:
 
 #. No page reload
 #. JSON dependent on both ends
-#. Use Python as the server-side programming language
+#. Use Node as the server-side programming language
 #. Do not use third-party libaries to compute the edit distance
 
 Scoring
 -------
 Your code will be judged based on the following scoring system:
 
-#. How well you've styled and used HTML/CSS on the frontend pages
+#. How well you've styled and used HTML/CSS on the front-end pages
 #. How well the project is tested
-#. How close your Python code adheres to PEP8 and PyLint ideals
+#. How close your JavaScript code adheres to PEP8 and JavaScript ideals
