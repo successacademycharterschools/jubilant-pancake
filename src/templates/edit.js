@@ -1,6 +1,7 @@
 export default function( $scope ) {
   $scope.string1 = '';
   $scope.string2 = '';
+  $scope.editDistance = '';
 
   $scope.getEditDistance = function( a, b ) {
     if ( a.length == 0 ) return b.length;
@@ -33,7 +34,14 @@ export default function( $scope ) {
         }
       }
     }
+    $scope.editDistance = matrix[b.length][a.length];
 
     return matrix[b.length][a.length];
   };
+
+  $scope.clear = function() {
+    $scope.string1 = '';
+    $scope.string2 = '';
+    $scope.editDistance = '';
+  }
 }

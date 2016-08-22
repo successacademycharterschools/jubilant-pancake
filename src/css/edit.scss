@@ -4,8 +4,12 @@
   }
 
   &__button {
-    display: block;
+    display: inline-block;
     margin-bottom: 0 auto 20px;
+  }
+
+  &__box {
+    margin-top: 20px;
   }
 
 }
