@@ -5,8 +5,8 @@ sends two strings to a backend service. The backend service computes the edit di
 (returns the minimum number of operations required to transform one string into another). The computed output
 is then returned to the end user.
 
-###This app includes: ###
+This app includes:
 * Sass, Babel, Webpack, Angular, Node, and ES2015
 * Testing is done with Tape: https://github.com/substack/tape
 
-* To run app - type in ```npm run dev``` into command line within the app.
+* To run app - type in ``npm run dev`` into command line within the app.
