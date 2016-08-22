@@ -6,7 +6,9 @@ sends two strings to a backend service. The backend service computes the edit di
 is then returned to the end user.
 
 This app includes:
-* Sass, Babel, Webpack, Angular, Node, and ES2015
-* Testing is done with Tape: https://github.com/substack/tape
+Sass, Babel, Webpack, Angular, Node, and ES2015
+
+Testing is done with Tape:
+https://github.com/substack/tape
 
 * To run app - type in ``npm run dev`` into command line within the app.
