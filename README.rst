@@ -8,7 +8,14 @@ is then returned to the end user.
 This app includes:
 Sass, Babel, Webpack, Angular, Node, and ES2015
 
+* To run app - type in ``npm run dev`` into command line within the app.
+
 Testing is done with Tape:
 https://github.com/substack/tape
 
-* To run app - type in ``npm run dev`` into command line within the app.
+* To test the app run ``node src/tests/test.js`` into the command line.
+
+
+Things I had to install to make this app:
+--------------------
+npm install tape --save-dev

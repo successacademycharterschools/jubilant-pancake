@@ -1,21 +1,20 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
-// import todoFactory from 'factories/todo-factory';
-import editController from 'templates/edit';
+import editController from 'edit/edit';
 
-const app = angular.module('app', [uiRouter]);
+const app = angular.module('app', [ uiRouter ]);
 
-app.config(($stateProvider, $urlRouterProvider, $locationProvider) => {
+app.config(( $stateProvider, $urlRouterProvider, $locationProvider ) => {
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
-        .state('index', {
+        .state( 'index', {
             url: '/',
-            template: require('templates/index.html'),
+            template: require( 'edit/index.html' ),
             controller: editController
         } );
 
-    $locationProvider.html5Mode(true);
-});
+    $locationProvider.html5Mode( true );
+} );
 
 export default app;
