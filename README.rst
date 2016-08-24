@@ -5,26 +5,12 @@ sends two strings to a backend service. The backend service computes the edit di
 (returns the minimum number of operations required to transform one string into another). The computed output
 is then returned to the end user.
 
-Assignment Instructions
------------------------
-Fork this repo and when you are done with the assignment submit a pull request. Write an email (with url to the pull request included) to our HR 
-indicating you are done and the solution is ready for code review.)
+This app includes:
+Sass, Babel, Webpack, Angular, Node, and ES2015
 
+* To run app - type in ``npm run dev`` into command line within the app.
 
-Constraints
------------
-You must meet the following constraints in order for the project to be
-considered valid:
+Testing is done with Tape:
+https://github.com/substack/tape
 
-#. No page reload
-#. JSON dependent on both ends
-#. Use Python as the server-side programming language
-#. Do not use third-party libaries to compute the edit distance
-
-Scoring
--------
-Your code will be judged based on the following scoring system:
-
-#. How well you've styled and used HTML/CSS on the frontend pages
-#. How well the project is tested
-#. How close your Python code adheres to PEP8 and PyLint ideals
+* To run unit test in the app run ``node -r babel-register src/tests/test.js`` into the command line.
