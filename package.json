@@ -1,5 +1,5 @@
 {
-  "name": "jubilant-pancake-mean",
+  "name": "jubilant-pancake-cat",
   "version": "1.0.0",
   "description": "This app calculates the edit distance between two strings.",
   "main": "index.js",
@@ -13,10 +13,16 @@
   "dependencies": {
     "angular": "^1.5.8",
     "angular-ui-router": "^0.3.1",
+    "babel-register": "^6.11.6",
     "bootstrap-sass": "^3.3.7",
     "express": "^4.14.0",
     "jquery": "^3.1.0"
   },
+  "babel": {
+   "presets": [
+     "es2015"
+   ]
+ },
   "devDependencies": {
     "autoprefixer-loader": "^3.2.0",
     "babel-core": "^6.13.2",

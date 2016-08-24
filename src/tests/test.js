@@ -1,4 +1,5 @@
 var test = require('tape');
+var editCtrl = require( '../edit/edit.js' );
 
 test( 'timing test', function ( t ) {
     t.plan( 1 );
@@ -7,7 +8,7 @@ test( 'timing test', function ( t ) {
     var start = Date.now();
 } );
 
-test( 'Edit Function', function ( t ) {
+test( 'Edit Function', function ( t, $scope ) {
   var actual = getEditDistance( 'cat', 'dog' );
   var expected = 3;
 
@@ -18,6 +19,7 @@ test( 'Edit Function', function ( t ) {
 
 //-------------------------------------------
 var getEditDistance;
+var editDistance;
 
 getEditDistance = function( a, b ) {
   if ( a.length == 0 ) return b.length;

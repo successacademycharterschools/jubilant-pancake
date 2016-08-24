@@ -13,4 +13,4 @@ Sass, Babel, Webpack, Angular, Node, and ES2015
 Testing is done with Tape:
 https://github.com/substack/tape
 
-* To run unit test in the app run ``node src/tests/test.js`` into the command line.
+* To run unit test in the app run ``node -r babel-register src/tests/test.js`` into the command line.
