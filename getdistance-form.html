@@ -1,0 +1,23 @@
+<!--  Get Distance Form -->
+<form name="getDistForm" ng-submit="getDistForm.$valid && formCtrl.getResult(formCtrl.request)" novalidate>
+  <fieldset class="form-group">
+    <textarea ng-model="formCtrl.request.string1" required class="form-control" placeholder="Type String 1 here." title="String 1" ng-focus="formCtrl.inputFocus()" ng-blur="formCtrl.inputBlur()"></textarea>
+  </fieldset>
+  <fieldset class="form-group">
+    <textarea ng-model="formCtrl.request.string2" required class="form-control" placeholder="Type String 2 here." title="String 2" ng-focus="formCtrl.inputFocus()" ng-blur="formCtrl.inputBlur()"></textarea>
+  </fieldset>
+  <fieldset class="form-group">
+    <input type="submit" class="btn btn-primary pull-right" value="Submit Request" />
+  </fieldset>
+
+  <section ng-show="formCtrl.submitted && !formCtrl.inputFocused">
+    <h2>Result:</h2>
+    <ul ng-show="!formCtrl.error">
+      <li>String 1: {{formCtrl.request.string1}}</li>
+      <li>String 2: {{formCtrl.request.string2}}</li>
+      <li class="answer" >Minimum number of operations required is {{formCtrl.result.answer}}</li> 
+    </ul>
+    <span class="errorMsg" ng-show="formCtrl.error">Error{{formCtrl.errorMsg}}</span>
+  </section>
+
+</form>
