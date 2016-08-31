@@ -1,0 +1,32 @@
+.App {
+  text-align: center;
+  font-family: 'Helvetica', sans-serif;
+}
+
+.App-header {
+  background-color: #387eff;
+  width: calc(100vw - 60px);
+  padding: 30px;
+  color: white;
+}
+
+.App-intro {
+  padding: 30px;
+}
+
+input{
+  border: 2px solid #cccccc;
+}
+
+input:focus{
+  outline: none;
+  border: 2px solid #387eff;
+}
+
+label{
+  display: inline-block;
+}
+
+br + label{
+  margin-top: 15px;
+}
