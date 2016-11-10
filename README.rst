@@ -5,14 +5,14 @@ We would like to see a front end page that contains a two textfield form which w
 Getting Started
 ---------------
 
-``
+```
 cd jubilantPancake
 
 pip install -r requirements.txt
 
 python manage.py runserver
 
-``
+```
 
 open index.html and enable CORS on browser
 
