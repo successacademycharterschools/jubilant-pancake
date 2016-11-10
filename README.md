@@ -16,6 +16,9 @@ open index.html and enable CORS on browser
 Todo: 
 
 -move request from frontend to node server
+
 -memoize requests
+
 -dockerize env
+
 -deploy on aws
