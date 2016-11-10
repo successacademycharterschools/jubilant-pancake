@@ -2,7 +2,7 @@ var http = new XMLHttpRequest();
 
 var url = "http://127.0.0.1:8000/quickstart/calc/";
 function calculateDistance(){
-var params = {};
+    var params = {};
     http.open("POST", url, true);
 
     params.firstString = document.getElementById('firststring').value;

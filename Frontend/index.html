@@ -11,16 +11,20 @@
     </head>
     <body>
 
-        <form>
-          First String:<br>
-          <input type="text" id="firststring"><br>
-          Last String:<br>
-          <input type="text" id="secondstring">
-        </form>
-        <button class="submit-button" onclick="calculateDistance()"></button>
+        <div class="main-calc">
+            <form class="input-form">
+              <div class="string-desc">First String</div>
+              <input type="text" class="input-form-field" id="firststring">
+              <div class="string-desc">Second String</div>
 
-        Result:
-        <div id="result">
+              <input type="text" class="input-form-field" id="secondstring">
+            </form>
+            <button class="submit-button" onclick="calculateDistance()">Submit</button>
+            <div class="results-container">
+                <div class="results" id="result">
+                    Edit Distance
+                </div>
+            </div>
         </div>
 
     </body>

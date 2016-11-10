@@ -1,0 +1,57 @@
+.main-calc {
+    border: 3px solid green;
+    height: 480px;
+    margin: auto;
+    padding: 10px;
+    width: 320px;
+}
+
+.string-desc {
+    font-size: 25px;
+}
+
+.input-form {
+    margin-left: 40px;
+    margin-top: 40px;
+    text-align: center;
+    width: 240px;
+
+}
+.input-form-field {
+    font-size: 25px;
+    height: 40px;
+    margin-bottom: 20px;
+    width: 240px;
+
+}
+
+.submit-button {
+    background-color: green;
+    color: white;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 40px;
+    margin-top: 20px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    width: 240px;
+}
+
+.results-container {
+    background: blue;
+    height: 80px;
+    margin-left:40px;
+    margin-top:40px;
+    width: 240px;
+}
+
+.results {
+    color: white;
+    font-size: 22px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    top: 28px;
+    width: 100%;
+}
