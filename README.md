@@ -9,14 +9,13 @@ Getting Started
 cd jubilantPancake
 pip install -r requirements.txt
 python manage.py runserver
-
 ```
 
 open index.html and enable CORS on browser
 
 Todo: 
 
-#. move request from frontend to node server
-#. memoize requests
-#. dockerize env
-#. deploy on aws
+-move request from frontend to node server
+-memoize requests
+-dockerize env
+-deploy on aws
