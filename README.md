@@ -6,6 +6,9 @@ Getting Started
 ---------------
 
 ```
+cd jubilent-pancake
+virtualenv env
+source env/bin/activate
 cd jubilantPancake
 pip install -r requirements.txt
 python manage.py runserver
