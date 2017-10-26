@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Success Academy Submission</title>
+</head>
+<body>
+    <h1>Success Academy Submission - Tests</h1>
+    <h4>Steve Olson</h4>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>String1</th>
+            <th>String2</th>
+            <th>Expected</th>
+            <th>Actual</th>
+            <th>Pass?</th>
+        </tr>
+        {% for test in tests %}
+        <tr>
+            <td>{{  test.title  }}</td>
+            <td>{{  test.string1  }}</td>
+            <td>{{  test.string2  }}</td>
+            <td>{{  test.result  }}</td>
+
+            {% if test.actual_result != test.result %}
+            <td style="color:red">
+            {% else %}
+            <td>
+            {% endif %}
+                {{  test.actual_result  }}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

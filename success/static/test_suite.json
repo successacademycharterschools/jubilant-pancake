@@ -1,0 +1,170 @@
+[
+  {
+    "title": "empty string",
+    "string1": "",
+    "string2": "",
+    "result": 0
+  },
+  {
+    "title": "empty string",
+    "string1": "a",
+    "string2": "",
+    "result": 1
+  },
+  {
+    "title": "empty string",
+    "string1": "",
+    "string2": "a",
+    "result": 1
+  },
+  {
+    "title": "empty string",
+    "string1": "abc",
+    "string2": "",
+    "result": 3
+  },
+  {
+    "title": "empty string",
+    "string1": "",
+    "string2": "abc",
+    "result": 3
+  },
+  {
+    "title": "equal string",
+    "string1": "",
+    "string2": "",
+    "result": 0
+  },
+  {
+    "title": "equal string",
+    "string1": "a",
+    "string2": "a",
+    "result": 0
+  },
+  {
+    "title": "equal string",
+    "string1": "abc",
+    "string2": "abc",
+    "result": 0
+  },
+  {
+    "title": "inserts only",
+    "string1": "",
+    "string2": "a",
+    "result": 1
+  },
+  {
+    "title": "inserts only",
+    "string1": "a",
+    "string2": "ab",
+    "result": 1
+  },
+  {
+    "title": "inserts only",
+    "string1": "b",
+    "string2": "ab",
+    "result": 1
+  },
+  {
+    "title": "inserts only",
+    "string1": "ac",
+    "string2": "abc",
+    "result": 1
+  },
+  {
+    "title": "inserts only",
+    "string1": "abcdefg",
+    "string2": "xabxcdxxefxgx",
+    "result": 6
+  },
+  {
+    "title": "deletes only",
+    "string1": "a",
+    "string2": "",
+    "result": 1
+  },
+  {
+    "title": "deletes only",
+    "string1": "ab",
+    "string2": "a",
+    "result": 1
+  },
+  {
+    "title": "deletes only",
+    "string1": "ab",
+    "string2": "b",
+    "result": 1
+  },
+  {
+    "title": "deletes only",
+    "string1": "abc",
+    "string2": "ac",
+    "result": 1
+  },
+  {
+    "title": "deletes only",
+    "string1": "xabxcdxxefxgx",
+    "string2": "abcdefg",
+    "result": 6
+  },
+  {
+    "title": "substitutions only",
+    "string1": "a",
+    "string2": "b",
+    "result": 1
+  },
+  {
+    "title": "substitutions only",
+    "string1": "ab",
+    "string2": "ac",
+    "result": 1
+  },
+  {
+    "title": "substitutions only",
+    "string1": "ac",
+    "string2": "bc",
+    "result": 1
+  },
+  {
+    "title": "substitutions only",
+    "string1": "abc",
+    "string2": "axc",
+    "result": 1
+  },
+  {
+    "title": "substitutions only",
+    "string1": "xabxcdxxefxgx",
+    "string2": "1ab2cd34ef5g6",
+    "result": 6
+  },
+  {
+    "title": "multiple ops",
+    "string1": "example",
+    "string2": "samples",
+    "result": 3
+  },
+  {
+    "title": "multiple ops",
+    "string1": "sturgeon",
+    "string2": "urgently",
+    "result": 6
+  },
+  {
+    "title": "multiple ops",
+    "string1": "levenshtein",
+    "string2": "frankenstein",
+    "result": 6
+  },
+  {
+    "title": "multiple ops",
+    "string1": "distance",
+    "string2": "difference",
+    "result": 5
+  },
+  {
+    "title": "multiple ops",
+    "string1": "java was neat",
+    "string2": "scale is great",
+    "result": 7
+  }
+]
