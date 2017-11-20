@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #f7f7f9;
+    font-family: Calibri, Candara, Arial, sans-serif;
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,0.08);
+}
+footer p {
+    margin-top: 10px;
+}

@@ -1,0 +1,62 @@
+<section>
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-offset-3 col-lg-6 col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12">
+              <div class="pnl-wrapper-custom">
+                  <div class="panel panel-primary panel-primary-custom">
+                      <div class="panel-heading panel-heading-custom">
+                          <h3 class="panel-title">{{ panelHeading }}</h3>
+                      </div>
+                      <div class="panel-body panel-body-custom">
+                          <form ngNativeValidate (ngSubmit)="onSubmit(f)" #f="ngForm">
+                              <div class="form-group form-group-custom">
+                                  <div class="input-group input-group-lg">
+                                      <span class="input-group-addon" id="sizing-addon1">
+                                          <label class="label-custom" for="text1">Source</label>
+                                      </span>
+                                      <input
+                                      type="text"
+                                      class="form-control"
+                                      placeholder="Enter source"
+                                      aria-describedby="sizing-addon1"
+                                      ngModel
+                                      name="text1"
+                                      id="text1"
+                                      required
+                                      >
+                                  </div>
+                              </div>
+                              <div class="form-group form-group-custom">
+                                  <div class="input-group input-group-lg">
+                                      <span class="input-group-addon" id="sizing-addon1">
+                                          <label class="label-custom" for="text2">Target</label>
+                                      </span>
+                                      <input
+                                      type="text"
+                                      class="form-control"
+                                      placeholder="Enter target"
+                                      aria-describedby="sizing-addon1"
+                                      ngModel
+                                      name="text2"
+                                      id="text2"
+                                      required
+                                      >
+                                  </div>
+                              </div>
+                              <button type="submit" class="btn btn-primary sbmt-btn-custom">Check</button>
+                          </form>
+                      </div>
+                  </div>
+                  <!--<button type="submit" class="btn btn-primary" (click)="formSubmit()">Submit</button>-->
+                  <div class="row" *ngIf="distOper || distOper == 0">
+                      <div class="col-md-12">
+                          <div class="alert alert-info alert-info-custom" role="alert">
+                              Minimum Edit Distance: <strong>{{ distOper }}</strong>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>

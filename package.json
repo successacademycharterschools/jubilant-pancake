@@ -1,0 +1,24 @@
+{
+  "name": "jubilant-pancake-server",
+  "version": "1.0.0",
+  "description": "Backend server built on NodeJS",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/successacademycharterschools/jubilant-pancake.git"
+  },
+  "author": "Zohaib Ahmed Jamil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/successacademycharterschools/jubilant-pancake/issues"
+  },
+  "homepage": "https://github.com/successacademycharterschools/jubilant-pancake#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2"
+  }
+}
