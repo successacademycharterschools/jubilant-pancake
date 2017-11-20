@@ -10,7 +10,7 @@ import { FormText } from '../../models/formtext.model';
 })
 export class FormComponent implements OnInit {
 
-  public panelHeading = 'Please enter text below';
+  public panelHeading: string = "Please enter text below";
   public texts: FormText;
   public distOper: string;
 
