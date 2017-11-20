@@ -11,7 +11,8 @@ import { FormText } from '../../models/formtext.model';
 export class FormComponent implements OnInit {
 
   public panelHeading = 'Please enter text below';
-  
+  public texts: FormText;
+  public distOper: string;
 
   constructor(private computeService: ComputeService) { }
 
@@ -20,6 +21,19 @@ export class FormComponent implements OnInit {
   }
 
 
-  
+  onSubmit(form: NgForm) {
+    this.texts = form.value;
+    // console.log("FORM OBJECT SUBMITTED: ", this.texts);
+
+    this.computeService.computeTexts(this.texts)
+      .subscribe(
+        data =>
+        // console.log(data.distOper),
+          this.distOper = data.distOper,
+        error => console.error(error)
+    );
+
+    form.reset();
+  }
 
 }

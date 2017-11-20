@@ -8,7 +8,7 @@
                           <h3 class="panel-title">{{panelHeading}}</h3>
                       </div>
                       <div class="panel-body panel-body-custom">
-                          <form >
+                          <form ngNativeValidate (ngSubmit)="onSubmit(f)" #f="ngForm">
                               <div class="form-group form-group-custom">
                                   <div class="input-group input-group-lg">
                                       <span class="input-group-addon" id="sizing-addon1">
@@ -45,6 +45,14 @@
                               </div>
                               <button type="submit" class="btn btn-primary sbmt-btn-custom">Check</button>
                           </form>
+                      </div>
+                  </div>
+                  <!--<button type="submit" class="btn btn-primary" (click)="formSubmit()">Submit</button>-->
+                  <div class="row" *ngIf="distOper || distOper == 0">
+                      <div class="col-md-12">
+                          <div class="alert alert-info alert-info-custom" role="alert">
+                              Minimum Edit Distance: <strong>{{ distOper }}</strong>
+                          </div>
                       </div>
                   </div>
               </div>
