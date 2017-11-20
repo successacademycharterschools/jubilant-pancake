@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { FormComponent } from './components/form/form.component';
 import { ComputeService } from './services/compute.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,9 +16,10 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule
-  ],
-  providers: [ComputeService],
-  bootstrap: [AppComponent]
+],
+providers: [ComputeService],
+bootstrap: [AppComponent]
 })
 export class AppModule { }
