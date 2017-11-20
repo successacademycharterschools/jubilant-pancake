@@ -7,6 +7,13 @@ router.use(function(req, res, next) {
     next();
   });
 
-
+router.get('/test',function(req,resp,next){
+    var test = {
+        name: 'test',
+        other: 'xyz'
+    };
+    // resp.send('this is api data');
+    resp.send(test);
+});
 
 module.exports=router;
