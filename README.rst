@@ -1,5 +1,5 @@
 The Jubilant Pancake
---------------------
+====================
 We would like to see a front end page that contains a two textfield form which when submitted
 sends two strings to a backend service. The backend service computes the edit distance between two strings
 (returns the minimum number of operations required to transform one string into another). The computed output
