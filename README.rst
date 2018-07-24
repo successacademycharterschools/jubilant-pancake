@@ -1,32 +1,21 @@
 The Jubilant Pancake
 --------------------
-We would like to see a front end page that contains a two textfield form which when submitted
-sends two strings to a backend service. The backend service computes the edit distance between two strings
-(returns the minimum number of operations required to transform one string into another). The computed output
-is then returned to the end user.
+This is a simple app that helps users compute the levenshtein distance between two strings they submit via a form.
+To get started, just enter a valid string and get a return of the minimum operations necessary to match your string inputs.
 
-Assignment Instructions
+Installation
 -----------------------
-Fork this repo and when you are done with the assignment submit a pull request. Write an email (with url to the pull request included) to our HR 
-indicating you are done and the solution is ready for code review.)
+ In your console run: npm install
+ In your console run: npm start
 
 
-Constraints
+Technologies
 -----------
-You must meet the following constraints in order for the project to be
-considered valid:
+This Project is built with a React.js frontend, and a Ruby on Rails backend. Once The rails backend is tested and running properly, I will refactor and rebuild in Python.
 
-#. No page reload / Single-page App
-#. JSON dependent on both ends
-#. A server side component in the language of your choosing (ranked preference: Python, JavaScript, anything else)
-#. Do not use third-party libaries to compute the edit distance
-
-Scoring
--------
-Your code will be judged based on the following scoring system:
-
-#. How well you've styled and used HTML/CSS on the frontend pages
-#. How well the project is tested
-#. How well structured your commits are
-#. How well documented your code is
-#. If using Python, how close your Python code adheres to PEP8 and PyLint ideals
+React.js
+HTML5
+CSS3 (Grid and Flex)
+Ruby on rails
+Testing via Jest
+API documentation via Swagger
