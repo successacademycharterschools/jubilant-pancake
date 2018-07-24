@@ -1,0 +1,50 @@
+/* Our css styles */
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+label {
+	padding-right: 15px;
+}
+
+.container {
+	margin: auto;
+	width: 50%;
+	border-radius: 5px;
+	background-color: #f6f7ad;
+	padding: 10%;
+}
+
+.formGroup {
+	padding: 10px 0 10px 0;
+	margin: 10px 0 15px 0;
+}
+
+input[type=text] {
+	width: 40%;
+	height: 15px;
+	font-size: 15px;
+	padding: 10px;
+	border-radius: 2px;
+}
+
+button[type=submit] {
+	border-radius: 5px;
+	background-color: #66c456;
+	padding: 15px;
+	cursor: pointer;
+}
+
+button[type=submit]:hover {
+	background-color: #95e288;
+}
+
+.outputContainer {
+	text-align: center;
+	margin-top: 20px;
+	padding: 15px;
+	border-radius: 5px;
+	border-color: #3f7059;
+	background-color: #22c177;
+}
