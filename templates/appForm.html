@@ -5,25 +5,30 @@
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 
 	<!-- LOAD ANGULAR -->
-	<script src="{{ url_for('static', filename='javascript/angular.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='javascript/angular.min.js') }}?ts=1"></script>
+
+	<!-- Load our service file -->
+	<script src="{{ url_for('static', filename='javascript/service.js') }}?ts=2"></script>
 </head>
-<body>
-	<h2>HTML Forms</h2>
+<body ng-app="formApp" ng-controller="formController">
+	<h2>My Form</h2>
 
 	<div class="container">
-		<form>
+		<form ng-submit="submitForm()">
 			<div class="formGroup">
 				<label for="str1">Enter String 1:</label>
-				<input type="text" name="str1" value="">
+				<input type="text" name="str1" ng-model="formData.str1">
 			</div>
 			<div class="formGroup">
 				<label for="str2">Enter String 2:</label>
-				<input type="text" name="str2" value="">
+				<input type="text" name="str2" ng-model="formData.str2">
 			</div>
 			<div class="btnGroup">
-				<input type="submit" value="Submit">
+				<button type="submit">Submit</button>
 			</div>
 		</form>
 	</div>
+
+	<div id="message" class="message">//result//</div>
 </body>
 </html>
