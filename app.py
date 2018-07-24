@@ -45,7 +45,9 @@ def getEditDistance(str1, str2):
 	# y coordinates
 	yCoorLen = len(str2) + 1
 
-	# creating a matrix
+	# creating a matrix to pinpoint number of times we are changing a string
+	# We are using the Levenshtein distance concept.
+	# Ref: https://en.wikipedia.org/wiki/Levenshtein_distance
 	matrix = [[-1 for i in range(xCoorLen)] for j in range(yCoorLen)]
 
 	# looping through
