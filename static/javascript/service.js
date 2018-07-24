@@ -1,5 +1,5 @@
 // define angular module/app
-var formApp = angular.module('formApp', [])
+var formApp = angular.module('formApp',  ['ngAnimate'])
 	.config(function($interpolateProvider) {
 		$interpolateProvider.startSymbol('//').endSymbol('//');
 	});
