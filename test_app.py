@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #
 import unittest
-from service import getEditDistance
+from app import getEditDistance
 
 class TestgetEditDistance(unittest.TestCase):
 

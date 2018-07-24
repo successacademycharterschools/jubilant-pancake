@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Load StyleSheet -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+	<!-- LOAD ANGULAR -->
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+</head>
+<body>
+	<h2>HTML Forms</h2>
+
+	<div class="container">
+		<form>
+			<div class="formGroup">
+				<label for="str1">Enter String 1:</label>
+				<input type="text" name="str1" value="">
+			</div>
+			<div class="formGroup">
+				<label for="str2">Enter String 2:</label>
+				<input type="text" name="str2" value="">
+			</div>
+			<div class="btnGroup">
+				<input type="submit" value="Submit">
+			</div>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,7 +1,12 @@
-#!flask/bin/python
-
 from flask import Flask, request, json, jsonify
+from flask import render_template
+
 app = Flask(__name__)
+
+@app.route('/')
+def home():
+	return render_template('appForm.html')
+
 
 # Service to actually recieve and test the string
 @app.route('/test_string', methods=['POST'])
