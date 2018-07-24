@@ -9,8 +9,8 @@ def home():
 
 
 # Service to actually recieve and test the string
-@app.route('/test_string', methods=['POST'])
-def testString():
+@app.route('/calculate_string', methods=['POST'])
+def calculateString():
 	# Retrieving our request parameters & decoding them
 	requestParams = request.get_json()
 	str1 = requestParams['str1']

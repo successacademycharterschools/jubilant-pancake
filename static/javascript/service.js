@@ -19,7 +19,7 @@ function formController($scope, $http) {
 			return false;
 		}
 
-		$http.post('http://127.0.0.1:5002/test_string', $scope.formData)
+		$http.post('http://127.0.0.1:5002/calculate_string', $scope.formData)
 			.success(function(data) {
 				$scope.result = data.moves + ' moves would be needed';
 			}
