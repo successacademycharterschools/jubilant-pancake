@@ -5,8 +5,7 @@ To get started, just enter a valid string and get a return of the minimum operat
 
 Installation
 -----------------------
- In your console run: npm install
- In your console run: npm start
+npm install && npm start
 
 
 Technologies
