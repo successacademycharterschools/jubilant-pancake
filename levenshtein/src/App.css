@@ -1,15 +1,27 @@
+/* set layout of the webpage to grid, and create row divs of 100px */
 .App {
   text-align: center;
+  display: grid;
+  grid-template-rows: 100px;
 }
 
+/* set styling for success academy logo */
 .App-logo {
   margin-top: 10px;
-  /* animation: App-logo-spin infinite 20s linear; */
   height: 25px;
 }
 
+/* styled the input to match success academy color scheme */
+input {
+  margin-top: 5px;
+  width: 300px;
+  border: solid 1px;
+  text-align: center;
+}
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+/* styled buttons to match success academy color scheme */
+.button {
+  width: 100px;
+  margin-top: 5px;
+  border: solid 2px orange;
 }

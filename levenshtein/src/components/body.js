@@ -9,7 +9,7 @@ class Body extends React.Component {
         <br />
         <input type="text" value="Academy" />
         <br />
-        <input type="submit" value="Submit" />
+      <input className='button' type="submit" value="Submit" />
       </form>
     );
   }
