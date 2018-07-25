@@ -47,6 +47,11 @@ input {
 
 }
 
+.button:hover {
+    background-color: orange;
+    color: white;
+}
+
 /* styled the welcome component */
 
 .welcome {
