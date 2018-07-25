@@ -7,7 +7,7 @@
 .App {
   text-align: center;
   display: grid;
-  grid-template-rows: 100px;
+  grid-template-rows: 40px;
 }
 
 Body {}
@@ -19,6 +19,10 @@ Body {}
   height: 25px;
 }
 
+.image {
+  width: 130px;
+}
+
 /* styled the input to match success academy color scheme */
 
 input {
@@ -26,6 +30,7 @@ input {
   width: 300px;
   border: solid 1px;
   text-align: center;
+  outline:none;
 }
 
 /* styled buttons to match success academy color scheme */
@@ -50,9 +55,13 @@ input {
   margin: 20px;
 }
 
+.instructions {
+  font-family: 'Crimson Text', serif;
+}
+
 /* styled the form component to make better use of html body */
 
 .form {
-  margin-top: 70px;
+  margin-top: 50px;
   font-family: 'Roboto', sans-serif;
 }
