@@ -1,17 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:700');
+
 /* set layout of the webpage to grid, and create row divs of 100px */
+
 .App {
   text-align: center;
   display: grid;
   grid-template-rows: 100px;
 }
 
+Body {}
+
 /* set styling for success academy logo */
+
 .App-logo {
   margin-top: 10px;
   height: 25px;
 }
 
 /* styled the input to match success academy color scheme */
+
 input {
   margin-top: 5px;
   width: 300px;
@@ -20,8 +29,30 @@ input {
 }
 
 /* styled buttons to match success academy color scheme */
+
 .button {
   width: 100px;
   margin-top: 5px;
   border: solid 2px orange;
+  font-family: 'Roboto Condensed', sans-serif;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  background-color: #f6f6f6;
+
+}
+
+/* styled the welcome component */
+
+.welcome {
+  font-family: 'Crimson Text', serif;
+  border-bottom: solid 1px orange;
+  margin: 20px;
+}
+
+/* styled the form component to make better use of html body */
+
+.form {
+  margin-top: 70px;
+  font-family: 'Roboto', sans-serif;
 }
