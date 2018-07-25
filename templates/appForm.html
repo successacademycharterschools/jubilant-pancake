@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculate the Edit Distance</title>
+
+	<!-- Load StyleSheet -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+	<!-- Load our Angular Files -->
+	<script src="{{ url_for('static', filename='javascript/angular.min.js') }}?ts=1"></script>
+	<script src="{{ url_for('static', filename='javascript/angular-animate.js') }}?ts=1"></script>
+
+	<!-- Load our service file -->
+	<script src="{{ url_for('static', filename='javascript/service.js') }}?ts=2"></script>
+</head>
+<body ng-app="formApp" ng-controller="formController">
+	<h2 style="text-align: center">Calculate the Edit Distance Between 2 Strings</h2>
+
+	<div class="container">
+		<form>
+			<div class="formGroup">
+				<label for="str1">Enter String 1:</label>
+				<input type="text" name="str1" ng-model="formData.str1">
+			</div>
+			<div class="formGroup">
+				<label for="str2">Enter String 2:</label>
+				<input type="text" name="str2" ng-model="formData.str2">
+			</div>
+			<div class="btnGroup">
+				<button ng-click="reset = 1; submitForm()" type="submit">Submit</button>
+
+				<!-- Hide the outputContainer & clear formData object (textboxes also) -->
+				<button ng-click="reset = 0; formData.str1 = ''; formData.str2 = ''">Reset</button>
+			</div>
+		</form>
+
+		<!-- Our message div -->
+		<!-- if reset > 1 then display our result -->
+		<div class="outputContainer fade" ng-show="reset > 0">//result//</div>
+	</div>
+</body>
+</html>
