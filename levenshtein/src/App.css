@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Crimson+Text');
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:700');
-
 /* set layout of the webpage to grid, and create row divs of 100px */
 
 .App {
@@ -12,6 +11,16 @@
 
 Body {}
 
+/* styled the input to match success academy color scheme */
+
+input {
+  margin-top: 5px;
+  width: 350px;
+  border: solid 1px;
+  text-align: center;
+  outline: none;
+}
+
 /* set styling for success academy logo */
 
 .App-logo {
@@ -21,16 +30,6 @@ Body {}
 
 .image {
   width: 130px;
-}
-
-/* styled the input to match success academy color scheme */
-
-input {
-  margin-top: 5px;
-  width: 300px;
-  border: solid 1px;
-  text-align: center;
-  outline:none;
 }
 
 /* styled buttons to match success academy color scheme */
@@ -44,12 +43,11 @@ input {
   -moz-border-radius: 50px;
   border-radius: 50px;
   background-color: #f6f6f6;
-
 }
 
 .button:hover {
-    background-color: orange;
-    color: white;
+  background-color: orange;
+  color: white;
 }
 
 /* styled the welcome component */
