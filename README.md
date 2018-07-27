@@ -1,4 +1,4 @@
-The Jubilant Pancake
+**The Jubilant Pancake**
 --------------------
 This is a simple app that helps users compute the levenshtein distance between two strings they submit via a form.
 
@@ -10,7 +10,7 @@ Installation
 `npm install && npm start`
 
 
-Technologies
+**Technologies**
 -----------
 This Project is built with a React.js frontend, and a Ruby on Rails backend. Once The rails backend is tested and running properly, I will refactor and rebuild in Python.
 
@@ -22,6 +22,12 @@ CSS3 (Grid and Flex)
 
 Ruby on rails
 
+Rspec Testing
+
 Testing via Jest
 
-API documentation via Swagger
+
+**Backend Repository**
+
+
+https://github.com/ShawnCodes/jubilant_pancake_backend

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import Header from "./header";
 import Body from "./body";
 import Welcome from "./welcome.js";
@@ -29,28 +29,20 @@ class App extends Component {
       headers: {
         'Content-type': 'application/json'
       },
-      body: JSON.stringify({
-        'input1': `${this.state.input1}`,
-        'input2': `${this.state.input2}`
-      })
-    })
-      .then(r => r.json())
-      .then(data => alert(`There would need to be ${data.result} operations to make your two strings identical!`))
-      .then(this.setState({input1:"", input2: ""}))
+      body: JSON.stringify({'input1': `${this.state.input1}`, 'input2': `${this.state.input2}`})
+    }).then(r => r.json()).then(data => alert(`There would need to be ${data.result} operations to make your two strings identical!`)).then(this.setState({input1: "", input2: ""}))
   }
 
   render() {
     console.log(this.state.output);
-    return (
-      <div className="App">
-        <Header />
-        <div className="content">
-          <Welcome />
-        <Instructions />
-      <Body setter1={this.setInput1} setter2={this.setInput2} mySubmit={this.handleSubmit} inputs={this.state}/>
-        </div>
+    return (<div className="App">
+      <Header/>
+      <div className="content">
+        <Welcome/>
+        <Instructions/>
+        <Body setter1={this.setInput1} setter2={this.setInput2} mySubmit={this.handleSubmit} inputs={this.state}/>
       </div>
-    );
+    </div>);
   }
 }
 
