@@ -10,19 +10,16 @@ class App extends Component {
     super(props);
     this.state = {
       input1: "",
-      input2: "",
-      output: ""
+      input2: ""
     }
   }
 
   setInput1 = (e) => {
     this.setState({input1: e.target.value})
-    console.log("My state is", this.state.input1);
   }
 
   setInput2 = (e) => {
     this.setState({input2: e.target.value})
-    console.log("My state is", this.state.input2);
   }
 
   handleSubmit = (e) => {
@@ -38,21 +35,19 @@ class App extends Component {
       })
     })
       .then(r => r.json())
-      .then(data => console.log(data))
-  }
-
-  renderThis(){
-
+      .then(data => alert(`There would need to be ${data.result} operations to make your two strings identical!`))
+      .then(this.setState({input1:"", input2: ""}))
   }
 
   render() {
+    console.log(this.state.output);
     return (
       <div className="App">
         <Header />
         <div className="content">
           <Welcome />
         <Instructions />
-      <Body setter1={this.setInput1} setter2={this.setInput2} mySubmit={this.handleSubmit}/>
+      <Body setter1={this.setInput1} setter2={this.setInput2} mySubmit={this.handleSubmit} inputs={this.state}/>
         </div>
       </div>
     );
