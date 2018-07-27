@@ -25,6 +25,26 @@ class App extends Component {
     console.log("My state is", this.state.input2);
   }
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    fetch('http://localhost:3001/api/v1/inputs', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        'input1': `${this.state.input1}`,
+        'input2': `${this.state.input2}`
+      })
+    })
+      .then(r => r.json())
+      .then(data => console.log(data))
+  }
+
+  renderThis(){
+
+  }
+
   render() {
     return (
       <div className="App">
@@ -32,7 +52,7 @@ class App extends Component {
         <div className="content">
           <Welcome />
         <Instructions />
-      <Body setter1={this.setInput1} setter2={this.setInput2}/>
+      <Body setter1={this.setInput1} setter2={this.setInput2} mySubmit={this.handleSubmit}/>
         </div>
       </div>
     );
