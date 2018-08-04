@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './App.css';
 import WelcomeComponent from "./components/WelcomeComponent.jsx";
 import DashboardComponent from "./components/DashboardComponent.jsx";
 

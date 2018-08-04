@@ -59,7 +59,6 @@ class DashboardComponent extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     const { str1, str2, distance, history, saved } = this.state;
     let result = history[history.length - 1];
     return (
