@@ -2,6 +2,7 @@ import React from "react";
 
 const FormComponent = ({ str1, str2, handleInput, handleSubmit }) => {
 
+  // renders form for user input
   return (
       <form>
         <input

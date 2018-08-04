@@ -1,6 +1,8 @@
 import React from "react";
 
 const HistoryComponent = ({ history }) => {
+
+  // renders component that will display the list of searches the user has done
   let historyItems = history.map(item => (
     <ul key={history.indexOf(item)}>
       <li>

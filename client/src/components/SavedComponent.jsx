@@ -2,6 +2,7 @@ import React from "react";
 
 const SavedComponent = ({ saved }) => {
 
+  // renders component that will display the list of searches the user has saved
   let savedItems = saved.map(item => (
     <ul key={saved.indexOf(item)}>
       <li>Strings: {item.str1} & {item.str2}</li>

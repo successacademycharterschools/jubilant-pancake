@@ -5,6 +5,9 @@ import FormComponent from "./FormComponent.jsx";
 import SavedComponent from "./SavedComponent.jsx";
 
 class DashboardComponent extends React.Component {
+  // set state with empty strings, distance, history and saved.
+  // str1 and str2 will be the user input. distance will be the Levenshtein
+  // distance calculated in the backend
   state = {
     str1: "",
     str2: "",
@@ -13,12 +16,15 @@ class DashboardComponent extends React.Component {
     saved: []
   };
 
+  // sets state equal to user input for str1 and str2
   handleInput = e => {
     this.setState({
       [e.target.name]: e.target.value
     });
   };
 
+  // sends POST request to backend for Levenshtein distance calculation,
+  // clears user input, and sets history and distance in state
   handleSubmit = e => {
     e.preventDefault();
     const { str1, str2, history } = this.state;
@@ -42,6 +48,7 @@ class DashboardComponent extends React.Component {
       });
   };
 
+  // saves the result to the saved array in state
   handleSave = e => {
     e.preventDefault();
     const { saved, history } = this.state;

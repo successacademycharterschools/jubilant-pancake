@@ -1,6 +1,8 @@
 import React from "react";
 
 class WelcomeComponent extends React.Component {
+
+  // renders component that welcomes user
   render() {
     return (
       <div className="WelcomeComponent">
