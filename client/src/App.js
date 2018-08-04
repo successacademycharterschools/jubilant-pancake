@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import WelcomeComponent from "./components/WelcomeComponent.jsx";
-import FormComponent from "./components/FormComponent.jsx";
+import DashboardComponent from "./components/DashboardComponent.jsx";
 
 class App extends Component {
   render() {
@@ -8,7 +8,7 @@ class App extends Component {
       <div className="App">
         <WelcomeComponent />
         <br />
-        <FormComponent />
+        <DashboardComponent />
         <br />
       </div>
     );
