@@ -1,5 +1,6 @@
 import React from "react";
 import ResultComponent from "./ResultComponent.jsx";
+import HistoryComponent from "./HistoryComponent.jsx";
 
 class FormComponent extends React.Component {
   state = {
@@ -10,11 +11,13 @@ class FormComponent extends React.Component {
     saved: []
   };
 
+
   handleInput = e => {
     this.setState({
       [e.target.name]: e.target.value
     });
   };
+
 
   handleSubmit = e => {
     e.preventDefault();
@@ -32,14 +35,23 @@ class FormComponent extends React.Component {
       .then(res => res.json())
       .then(json => {
         this.setState({
+          str1: "",
+          str2: "",
           distance: json.distance,
           history: [...history, json]
         });
       });
   };
 
+  handleSave = e => {
+    e.preventDefault()
+    console.log(e.target)
+  }
+
+
   render() {
-    const { str1, str2, distance } = this.state;
+    const { str1, str2, distance, history } = this.state;
+    let result = history[history.length-1]
     return (
       <div className="FormComponent">
         <form>
@@ -65,8 +77,9 @@ class FormComponent extends React.Component {
           <br />
         </form>
         {distance !== "" ? (
-          <ResultComponent distance={distance} str1={str1} str2={str2} />
+          <ResultComponent result={result} />
         ) : null}
+        <HistoryComponent history={history} save={this.handleSave}/>
       </div>
     );
   }

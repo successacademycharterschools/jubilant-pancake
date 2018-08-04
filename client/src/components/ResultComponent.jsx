@@ -1,9 +1,9 @@
 import React from "react";
 
-const ResultComponent = ({ distance, str1, str2 }) => {
+const ResultComponent = ({ result }) => {
   return (
     <div>
-      <p>Edit Distance is {distance} for {str1} and {str2}</p>
+      <p>Edit Distance is {result.distance} for {result.str1} and {result.str2}</p>
     </div>
   );
 };
