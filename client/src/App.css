@@ -1,28 +1,55 @@
-.App {
+body {
+  font-family: 'Work Sans', sans-serif;
+  color: #7a7c80;
+}
+
+.navbar {
+  list-style-type: none;
+  width: 100%;
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
   text-align: center;
+  /* flex-wrap: wrap; */
+  /* justify-content: flex-end; */
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.navbar-item {
+  padding: 10px 20px;
+  color: #F7910B;
+  font-weight: 300;
+  transition: .2s ease;
+  float: right;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.item-border {
+  border-style: solid;
+  border-width: 0px 0px 0px 1px;
+  border-color: #E5E5E5;
 }
 
-.App-title {
-  font-size: 1.5em;
+.navbar-item:hover {
+  background-color: #FAFAFA;
+  border-color: #FAFAFA;
 }
 
-.App-intro {
-  font-size: large;
+.saLogo {
+  width: 110px;
+  height: 75px;
+  float: left;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.WelcomeComponent {
+  padding: 100px 50px 5px 50px;
+}
+
+.DashboardComponent {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 50px 5px 50px;
+}
+
+.child-component {
+  padding: 10px;
 }

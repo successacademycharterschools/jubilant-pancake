@@ -13,7 +13,7 @@ const HistoryComponent = ({ history }) => {
   ));
 
   return (
-    <div>
+    <div className="HistoryComponent child-component">
       <h3>Your Previous Searches:</h3>
       <div>{historyItems.length ? historyItems : `No history to display.`}</div>
     </div>

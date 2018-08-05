@@ -11,7 +11,7 @@ const SavedComponent = ({ saved }) => {
   ));
 
   return (
-    <div>
+    <div className="SavedComponent child-component">
       <h3>Your Saved Results:</h3>
       <div>{savedItems.length ? savedItems : `Save something!`}</div>
     </div>
