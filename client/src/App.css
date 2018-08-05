@@ -4,19 +4,57 @@
 body {
   font-family: "Work Sans", sans-serif;
   color: #7a7c80;
-  padding: 5px;
 }
 
 h1,
 h2,
 h3,
-h4
+h4,
 h5 {
   color: #f7910b;
   border-style: solid;
   border-width: 0px 0px 1px 0px;
   border-color: #f7910b;
 }
+
+button {
+  border-radius: 5px;
+  border-color: inherit;
+  background-color: #f7910b;
+  color: white;
+  padding: 15px;
+  margin: 0px 10px;
+  font-family: inherit;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background-color: white;
+  color: #f7910b;
+}
+
+input {
+  padding: 15px;
+  margin: 0px 10px;
+  width: 250px;
+  font-size: 14px;
+}
+
+input:focus,
+button:focus {
+  outline: none;
+}
+
+a {
+  color: #406992;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 
 /*
  * NAVBAR ***********
@@ -26,9 +64,11 @@ h5 {
   width: 100%;
   position: fixed;
   margin: 0;
-  padding: 0;
+  padding: 5px;
+  top: 0;
   overflow: hidden;
   text-align: center;
+  background-color: white;
 }
 
 .navbar-item {
@@ -69,6 +109,25 @@ h5 {
   padding: 5px 50px 5px 50px;
 }
 
-.child-component {
-  /* padding: 10px; */
+.SavedComponent {
+  margin-top: 25px;
+  padding: 10px 10px 25px 10px;
+  background-color: #295684;
+  color: white;
+}
+
+.list-items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list-item {
+  margin: 5px;
+  width: 250px;
+  height: 75px;
+}
+
+.SavedComponent h3 {
+  color: white;
+  border-color: white;
 }
