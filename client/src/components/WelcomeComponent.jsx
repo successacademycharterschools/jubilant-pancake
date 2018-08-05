@@ -4,7 +4,7 @@ class WelcomeComponent extends React.Component {
   // renders component that welcomes user
   render() {
     return (
-      <div className="WelcomeComponent">
+      <div className="WelcomeComponent child-component">
         <h1>Welcome!</h1>
         <p>
           Welcome to the Success Academy string edit distance app using the

@@ -12,7 +12,7 @@ class Footer extends Component {
           <h3>Distance Edit App</h3>
           <div>
             <p>
-              Made with ❤️ by <strong>Matthew Thorry</strong>, 2018 with
+              Made with ❤️by <strong>Matthew Thorry</strong>, 2018 with
               JavaScript, React, Express and custom CSS
             </p>
             <a
