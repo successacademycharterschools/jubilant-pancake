@@ -6,10 +6,10 @@ class WelcomeComponent extends React.Component {
     return (
       <div className="WelcomeComponent">
         <h1>Welcome!</h1>
-        <h3>
-          Welcome to the Success Academy edit distance app using the Levenshtein
-          distance.
-        </h3>
+        <p>
+          Welcome to the Success Academy string edit distance app using the Levenshtein
+          Distance Metric. <em>Redefining what's possible.</em>
+      </p>
       </div>
     );
   }

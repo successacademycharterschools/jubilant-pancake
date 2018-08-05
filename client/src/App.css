@@ -1,8 +1,26 @@
+/*
+ * BODY ***********
+ */
 body {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   color: #7a7c80;
+  padding: 5px;
 }
 
+h1,
+h2,
+h3,
+h4
+h5 {
+  color: #f7910b;
+  border-style: solid;
+  border-width: 0px 0px 1px 0px;
+  border-color: #f7910b;
+}
+
+/*
+ * NAVBAR ***********
+ */
 .navbar {
   list-style-type: none;
   width: 100%;
@@ -11,27 +29,24 @@ body {
   padding: 0;
   overflow: hidden;
   text-align: center;
-  /* flex-wrap: wrap; */
-  /* justify-content: flex-end; */
 }
 
 .navbar-item {
   padding: 10px 20px;
-  color: #F7910B;
+  color: #f7910b;
   font-weight: 300;
-  transition: .2s ease;
+  transition: 0.2s ease;
   float: right;
 }
 
 .item-border {
   border-style: solid;
   border-width: 0px 0px 0px 1px;
-  border-color: #E5E5E5;
+  border-color: #e5e5e5;
 }
 
 .navbar-item:hover {
-  background-color: #FAFAFA;
-  border-color: #FAFAFA;
+  background-color: #fafafa;
 }
 
 .saLogo {
@@ -40,6 +55,10 @@ body {
   float: left;
 }
 
+
+/*
+ * COMPONENTS ***********
+ */
 .WelcomeComponent {
   padding: 100px 50px 5px 50px;
 }
@@ -51,5 +70,5 @@ body {
 }
 
 .child-component {
-  padding: 10px;
+  /* padding: 10px; */
 }
