@@ -77,6 +77,7 @@ class DashboardComponent extends React.Component {
             </button>
           </div>
         ) : null}
+        <br />
         <HistoryComponent history={history} />
         <SavedComponent saved={saved} />
       </div>

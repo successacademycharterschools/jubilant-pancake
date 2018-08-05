@@ -7,9 +7,9 @@ class WelcomeComponent extends React.Component {
       <div className="WelcomeComponent">
         <h1>Welcome!</h1>
         <p>
-          Welcome to the Success Academy string edit distance app using the Levenshtein
-          Distance Metric. <em>Redefining what's possible.</em>
-      </p>
+          Welcome to the Success Academy string edit distance app using the
+          Levenshtein Distance Metric. <em>Redefining what's possible.</em>
+        </p>
       </div>
     );
   }

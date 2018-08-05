@@ -146,6 +146,11 @@ a:hover {
   color: white;
 }
 
+.SavedComponent h3 {
+  color: white;
+  border-color: white;
+}
+
 .list-items {
   display: flex;
   flex-wrap: wrap;
@@ -157,7 +162,6 @@ a:hover {
   height: 75px;
 }
 
-.SavedComponent h3 {
-  color: white;
-  border-color: white;
+.child-component {
+  margin-bottom: 25px;
 }
