@@ -3,6 +3,7 @@ Matt's Jubilant Pancake
 This fork was created by Matt Thorry for Success Academy Charter Schools and fulfills the requirements listed below. It was created using JavaScript with React on the frontend and Node/Express on the backend. All CSS and styling are done by me and made to match the SA aesthetic.
 
 To install and run,
+
 1. Clone this repo
 2. Change directories into server and run command `npm install && npm start` to start the backend Node server
 3. Then change directories into client and run command `npm install && npm start` to start the frontend React server
