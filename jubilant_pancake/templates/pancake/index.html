@@ -1,0 +1,69 @@
+{% load static %}
+{% load staticfiles %}
+<HTML>
+    <head>
+        <title>Jubilant Pancake Levenshtein Distance application</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static 'css/jubilant_pancake.css' %}">
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="panel panel-primary">
+                    <div class="panel panel-heading">
+                        <h3>Jubilant Pancake</h3>
+                        <h4>The Levenshtein Distance Calculator</h4>
+                    </div>
+                    <div class="panel panel-body">
+                        <form id="enter_strings" novalidate>
+                            {% csrf_token %}
+                            <p>Enter your strings:</p>
+                            <p>First string: {{ form.string_1 }}</p>
+                            <p>Second string: {{ form.string_2 }}</p>
+                        </form>
+                        <div class="row">
+                            <div id="levenshtein" class="col-sm-6"></div>
+                        </div>
+                        <div class="row">
+                            <div id="errors" class="col-sm-6"></div>
+                        </div>
+                        <p><button type="button" onclick="getDistance()" class="btn btn-primary"><i class="fa fa-magic" aria-hidden="true">Submit strings for magic</i></button></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+        <script>
+            function getDistance(){
+                var csrf_token = Cookies.get('csrftoken');
+                var string_1 = document.forms[0].string_1.value;
+                var string_2 = document.forms[0].string_2.value;
+                var formdata = {
+                    "string_1": string_1,
+                    "string_2": string_2
+                };
+                var xhttp = new XMLHttpRequest();
+                xhttp.open('POST', 'http://localhost:8000/calculate/', true);
+                xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhttp.setRequestHeader("X-CSRFToken", csrf_token);
+                xhttp.onreadystatechange = function() {
+                    var string_1 = document.forms[0].string_1.value;
+                    var string_2 = document.forms[0].string_2.value;
+                    if (xhttp.readyState == 4 && xhttp.status == 200){
+                        if (string_1 && string_2){
+                            var levenshtein = JSON.parse(xhttp.responseText).edit_distance;
+                            document.getElementById("levenshtein").innerHTML = '<p><i class="fa fa-check-circle" aria-hidden="true"></i> The Levenshtein distance is ' + levenshtein + "</p>";
+                            document.getElementById("errors").innerHTML = '';
+                        } else {
+                            document.getElementById("levenshtein").innerHTML = '';
+                            document.getElementById("errors").innerHTML = '<p><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Please make sure to enter two strings</p>';
+                        };
+                    };
+                };
+                xhttp.send(JSON.stringify(formdata));
+            }
+        
+        </script>
+    </body>
+</HTML>
