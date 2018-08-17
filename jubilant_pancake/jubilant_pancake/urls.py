@@ -16,6 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-urlpatterns = [
+from .views import PancakeView, CalculateView
+
+urlpatterns = [  # pylint: disable=invalid-name
+    url(r'^$', PancakeView.as_view(), name='pancake'),
     url(r'^admin/', admin.site.urls),
+    url(r'^calculate/$', CalculateView.as_view(), name='calculate'),
 ]

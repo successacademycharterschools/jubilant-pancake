@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'jubilant-pancake'
+    'django_extensions',
+    'jubilant_pancake'
 ]
 
 MIDDLEWARE = [
@@ -123,3 +124,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOL = '{}/jubilant_pancake/static/'.format(BASE_DIR)
+
+SHELL_PLUS = 'ipython'

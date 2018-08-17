@@ -5,5 +5,4 @@ ALTER ROLE python SET default_transaction_isolation TO 'read committed';
 ALTER ROLE python SET timezone TO 'UTC';
 GRANT ALL PRIVILEGES ON DATABASE jubilant_pancake TO python;
 
-CREATE DATABASE test_jubilant_pancake;
-GRANT ALL PRIVILEGES ON DATABASE test_jubilant_pancake TO python;
+ALTER USER python CREATEDB;
