@@ -1,8 +1,19 @@
 <html>
     <head>
-        <title>{{ title }} - Jubilant Pancake</title>
+        <title>Michael Dadurian's Jubilant Pancake</title>
     </head>
     <body>
-        <h1>hi there</h1>
+        <h1>Compute Edit Distance</h1>
+		<form action="" method="post">
+			<p>
+				{{ form.string1.label }}<br>
+				{{ form.string1 }}
+				<br><br>
+				{{form.string2.label}}<br>
+				{{form.string2 }}
+			</p>
+			
+			<p> {{form.submit}}</p>
+		</form>
     </body>
 </html>
