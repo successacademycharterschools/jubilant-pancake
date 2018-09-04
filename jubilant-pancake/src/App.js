@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-class EditDistanceForm extends Component {
+class StringInputForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -54,7 +54,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Calculate Edit Distance</h1>
         </header>
-        <NameForm />
+        <StringInputForm />
       </div>
     );
   }
