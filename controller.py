@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect, url_for, abort, render_template, Response, session, jsonify, make_response
+from flask import Flask, request, redirect, url_for, abort, render_template, Response, session, jsonify, make_response, json
 
 
 app = Flask(__name__)
@@ -62,17 +62,15 @@ def index():
 		
 		
 		edit_distance = get_edit_distance(string1, string2, len(string1), len(string2))
-			
-		print('EDIT: ', edit_distance)
-			
-		response = make_response(render_template('index.html', edit_distance = edit_distance))
-		print(response.content_type)
+		
+		data = {"string1": string1, "string2":string2, "edit_distance":edit_distance}
+		response = app.response_class(response=json.dumps(data),status=200,mimetype='application/json')
+		response = make_response(render_template('index.html', response = response.get_json()['edit_distance'], string1= string1, string2=string2))
 		return response
 	
-	else:
-		print("non-POST")
-		response = make_response(render_template('index.html', edit_distance = edit_distance))
-		return response
+	
+	response = make_response(render_template('index.html', edit_distance = edit_distance))
+	return response
 		
 	
 
