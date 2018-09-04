@@ -1,8 +1,7 @@
-from flask import Flask, request, redirect, url_for, abort, render_template, Response, session, jsonify, make_response, json
+from flask import Flask, request, render_template, Response, jsonify, make_response, json
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = "ssss"
 
 def get_edit_distance(string1, string2, len1, len2):
 	#Init matrix for DP
@@ -45,32 +44,31 @@ def index():
 
 	edit_distance = 0
 	
-	if request.method == 'POST':
+	if request.method == "POST":
 		print("POST: contentType", request.content_type)
 		if request.content_type != "application/json":
 			response = make_response(render_template('index.html', edit_distance = edit_distance))
 			return response
-		array_data = request.get_json()
+		json_request = request.get_json()
 		data = {}
-		for item in array_data:
+		for item in json_request:
 			data[item['name']] = item['value']
 	
 		string1 = data.get('string1')
 		string2 = data.get('string2')
 		
-		print(string1, string2)
-		
-		
-		edit_distance = get_edit_distance(string1, string2, len(string1), len(string2))
-		
+		edit_distance = str(get_edit_distance(string1, string2, len(string1), len(string2)))
 		data = {"string1": string1, "string2":string2, "edit_distance":edit_distance}
-		response = app.response_class(response=json.dumps(data),status=200,mimetype='application/json')
-		response = make_response(render_template('index.html', response = response.get_json()['edit_distance'], string1= string1, string2=string2))
-		return response
+
+		return jsonify(data)
 	
 	
 	response = make_response(render_template('index.html', edit_distance = edit_distance))
 	return response
+
+
+if __name__ == "__main__":
+	app.run()	
 		
 	
 

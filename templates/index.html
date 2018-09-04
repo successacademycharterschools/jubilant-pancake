@@ -13,7 +13,7 @@
 		
 			$(document).ready( function() {
 			
-				$("#mainForm").submit(function() {
+				$("#mainForm").submit(function(event) {
 					
 					event.preventDefault();
 				   	var formData = JSON.stringify($("#mainForm").serializeArray());
@@ -24,12 +24,10 @@
 						contentType: 'application/json',
 						data: formData,
 						dataType: 'html',
-						url: 'index',
+						url: '/index',
 						success: function (e) {
-							
-							//document.getElementById("editDistance").style.display = "block";
-							document.write(e);
-							console.log(e);
+				
+							document.getElementById("editDistance").innerHTML = JSON.parse(e).edit_distance;
 
 						},
 						error: function(error) {
