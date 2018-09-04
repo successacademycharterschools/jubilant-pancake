@@ -1,19 +1,57 @@
 <html>
     <head>
+		<meta charset="utf-8"/>
         <title>Michael Dadurian's Jubilant Pancake</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		
+		<script>
+		
+			$(document).ready( function() {
+				$('#mainForm').submit(function() {
+					event.preventDefault();
+				   	//var formdata = $("#mainForm").serialize();
+				   	var formData = JSON.stringify($("#mainForm").serializeArray());
+				   	console.log("start");
+				   	console.log(formData);
+				   	$.ajax({
+						type: 'POST',
+						contentType: 'application/json',
+						data: formData,
+						dataType: 'html',
+						url: 'index',
+						success: function (e) {
+							document.write(e);
+							console.log(e);
+
+						},
+						error: function(error) {
+						console.log(error);
+					}
+					});
+				   	// stop the form from submitting the normal way and refreshing the page
+				   	//document.write()
+        		   	
+					
+				});
+			});
+		</script>
     </head>
+	
     <body>
         <h1>Compute Edit Distance</h1>
-		<form action="" method="post">
-			<p>
-				{{ form.string1.label }}<br>
-				{{ form.string1 }}
-				<br><br>
-				{{form.string2.label}}<br>
-				{{form.string2 }}
-			</p>
-			
-			<p> {{form.submit}}</p>
+		<form method='post' name="mainForm" id="mainForm"> 
+			String1: <input type="text" name="string1" id="string1"> 
+			</br>
+			</br>
+		
+			String2: <input type="text" name="string2" id="string2">  
+			</br>
+			</br>
+			<button type="submit" name = "button" id = "button">submit</button> 
+		</br>
+		</br>
+		
+		<span id="editDistance">{{edit_distance}}</span>
 		</form>
     </body>
 </html>
