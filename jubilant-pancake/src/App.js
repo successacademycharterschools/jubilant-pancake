@@ -41,12 +41,19 @@ class Result extends Component {
     
   }
 
+  calculate_edit_dist() {
+    let v1 = this.props.formValues['val_1'];
+    let v2 = this.props.formValues['val_2']
+    return v1.length - v2.length;
+  }
+
   render() {
+    var edit_dist = this.calculate_edit_dist();
     if (this.props.hidden) {
       return null;
     }
     return (
-      <p>Edit Distance: 42</p>
+      <p>Edit Distance: {edit_dist}</p>
     );
   }
 }
@@ -84,7 +91,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Calculate Edit Distance</h1>
+          <h1 className="App-title">Edit Distance Calculator</h1>
         </header>
         <StringInputForm
           formValues={this.state.formValues}
