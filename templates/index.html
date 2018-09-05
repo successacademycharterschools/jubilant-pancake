@@ -9,15 +9,16 @@
 		<link rel="stylesheet" href="/static/style.css">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		
+		
 		<script>
 		
 			$(document).ready( function() {
 			
 				$("#mainForm").submit(function(event) {
-					
+					//Prevent form submission from refreshing page
 					event.preventDefault();
+					//Get JSON String for Form Data to be sent to Controller
 				   	var formData = JSON.stringify($("#mainForm").serializeArray());
-				   	console.log("start");
 				   	console.log(formData);
 				   	$.ajax({
 						type: 'POST',
@@ -26,7 +27,10 @@
 						dataType: 'html',
 						url: '/index',
 						success: function (e) {
-				
+							/*
+							Upon successful AJAX call, set the Edit Distance to the response from server.
+							Server sends response in JSON form. Use JSON.parse to extract the Edit Distance
+							*/
 							document.getElementById("editDistance").innerHTML = JSON.parse(e).edit_distance;
 
 						},
@@ -34,7 +38,6 @@
 						console.log(error);
 					}
 					});
-				   	// stop the form from submitting the normal way and refreshing the page
 				
 					
 				});
@@ -47,9 +50,9 @@
 			<h1 class=" text-center text-primary" id="h1-compute">Compute Edit Distance</h1>
 			<div class="well">
 				<div class="row">
-					<div class="col-lg-6">
+					<div class="col-lg-4">
   
-						<form method='post' name="mainForm" id="mainForm"> 
+						<form method='post' name="mainForm" id="mainForm" onsubmit="sendJSON(this)"> 
 							<div class="form-group">
 								<label for="string1"> First String:  </label>
 								</br>
@@ -71,8 +74,15 @@
 					
 					</form>
 					
-					<div class="col-lg-6">
-						<h2 class="text-center text-primary display-1 font-weight-bold" name = "editDistance" id="editDistance">{{response}}</h2>
+					<div class = "col-lg-4">
+						</br></br>
+						<h4 class="text-center display-1 font-weight-bold">Edit Distance</h4>
+						<h2 class="text-center"> = </h2>
+					</div>
+					
+					<div class="col-lg-4">
+						</br></br></br></br>
+						<h1 class="text-center text-success display-1 font-weight-bold large-fontsize" name = "editDistance" id="editDistance"><span>{{response}}</span></h1>
 					</div>
 				</div>
 			</div>
