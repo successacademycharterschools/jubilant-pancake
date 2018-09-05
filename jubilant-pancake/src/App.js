@@ -35,11 +35,28 @@ class StringInputForm extends Component {
   }
 }
 
+class Result extends Component {
+  constructor(props) {
+    super(props);
+    
+  }
+
+  render() {
+    if (this.props.hidden) {
+      return null;
+    }
+    return (
+      <p>Edit Distance: 42</p>
+    );
+  }
+}
+
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      formValues: {'val_1': '', 'val_2': ''}
+      formValues: {'val_1': '', 'val_2': ''},
+      submitted: false
     };
     
     this.handleValueChange = this.handleValueChange.bind(this); // for sending input back up the hierarchy
@@ -59,6 +76,7 @@ class App extends Component {
 
   handleValueSubmit(event) {
     event.preventDefault();
+    this.setState({submitted: true})
     console.log(this.state.formValues);
   }
 
@@ -72,6 +90,11 @@ class App extends Component {
           formValues={this.state.formValues}
           onValueChange={this.handleValueChange}
           onValueSubmit={this.handleValueSubmit}
+          submitted={this.state.submitted}
+        />
+        <Result
+          formValues={this.state.formValues}
+          hidden={this.state.submitted !== true}
         />
       </div>
     );
