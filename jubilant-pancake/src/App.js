@@ -91,7 +91,7 @@ class Result extends Component {
       return null;
     }
     return (
-      <p>Edit Distance: {min_edit_dist}</p>
+      <p>Edit Distance: <b>{min_edit_dist}</b></p>
     );
   }
 }
@@ -129,18 +129,24 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Minimum Edit Distance Calculator</h1>
+          <div style={{display : 'inline-block', verticalAlign: 'middle'}}>
+            <img src={require('./ruler.png')} width="150" height="150" />
+          </div>
+          <div style={{display : 'inline-block', verticalAlgin: 'middle', textAlign: 'center'}}>
+            <h1 className="App-title">Minimum Edit Distance Calculator</h1>
+          </div>
         </header>
-        <StringInputForm
-          formValues={this.state.formValues}
-          onValueChange={this.handleValueChange}
-          onValueSubmit={this.handleValueSubmit}
-          submitted={this.state.submitted}
-        />
-        <Result
-          formValues={this.state.formValues}
-          hidden={this.state.submitted !== true}
-        />
+       
+          <StringInputForm
+            formValues={this.state.formValues}
+            onValueChange={this.handleValueChange}
+            onValueSubmit={this.handleValueSubmit}
+            submitted={this.state.submitted}
+          />
+          <Result
+            formValues={this.state.formValues}
+            hidden={this.state.submitted !== true}
+          />
       </div>
     );
   }
