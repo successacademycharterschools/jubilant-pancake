@@ -38,17 +38,53 @@ class StringInputForm extends Component {
 class Result extends Component {
   constructor(props) {
     super(props);
-    
+
   }
 
   calculate_edit_dist() {
     let v1 = this.props.formValues['val_1'];
-    let v2 = this.props.formValues['val_2']
-    return v1.length - v2.length;
+    let v2 = this.props.formValues['val_2'];
+
+    // initiate matrix
+    let matrix = [],
+    rows = v1.length,
+    cols = v2.length;
+    for ( var x = 0; x <= rows; x++ ) {  // create n rows and m columns
+      matrix[x] = Array(cols).fill(0);  // start with all values 0
+    }
+    for ( x = 1; x <= rows; x++ ) {  // initiatilize first column values
+      matrix[x][0] = x;
+    }
+    for ( var y = 1; y <= cols; y++ ) {  // initiatilize first row values
+      matrix[0][y] = y;
+    }
+    //console.log(matrix);
+
+    // calculate edit distanceusing dynamic programming
+    for ( var i = 1; i <= rows; i++) {
+      for ( var j = 1; j <= cols; j++) {
+        let added_val = 0;
+        if (v1[i-1] !== v2[j-1]){  // if values at same spot are not equal
+          // console.log("i = " + i + ", j = " + j);
+          // console.log(v1[i-1] + " and " + v2[j-1] + " are not equal!");
+          added_val = 2;  // cost = 1 to delete and 1 to add correct letter = 2
+        }
+
+        let same_row = matrix[i - 1][j] + 1,
+        same_col = matrix[i][j-1] + 1,
+        new_vals = matrix[i-1][j-1] + added_val;
+
+        matrix[i][j] = Math.min(same_row, same_col, new_vals);
+        
+      }
+    }
+
+    //console.log(matrix);
+    return matrix[rows][cols];
   }
 
   render() {
-    var edit_dist = this.calculate_edit_dist();
+    let edit_dist = this.calculate_edit_dist();
     if (this.props.hidden) {
       return null;
     }
