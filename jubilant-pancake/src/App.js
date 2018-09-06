@@ -58,15 +58,12 @@ class Result extends Component {
     for ( var y = 1; y <= cols; y++ ) {  // initiatilize first row values
       matrix[0][y] = y;
     }
-    //console.log(matrix);
 
     // calculate edit distanceusing dynamic programming
     for ( var i = 1; i <= rows; i++) {
       for ( var j = 1; j <= cols; j++) {
         let added_val = 0;
         if (v1[i-1] !== v2[j-1]){  // if values at same spot are not equal
-          // console.log("i = " + i + ", j = " + j);
-          // console.log(v1[i-1] + " and " + v2[j-1] + " are not equal!");
           added_val = 2;  // cost = 1 to delete and 1 to add correct letter = 2
         }
 
@@ -79,7 +76,6 @@ class Result extends Component {
       }
     }
 
-    //console.log(matrix);
     return matrix[rows][cols];
   }
 
@@ -107,6 +103,7 @@ class App extends Component {
   }
 
   handleValueChange(event) {
+    this.setState({submitted: false});
     event.preventDefault();
     let formValues = this.state.formValues;
     let name = event.target.name;
@@ -120,7 +117,6 @@ class App extends Component {
   handleValueSubmit(event) {
     event.preventDefault();
     this.setState({submitted: true})
-    console.log(this.state.formValues);
   }
 
   render() {
