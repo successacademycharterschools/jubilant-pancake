@@ -1,4 +1,6 @@
+import os
 from flask import Flask, request, render_template, Response, jsonify, make_response, json
+
 
 
 app = Flask(__name__)
@@ -67,7 +69,9 @@ def index():
 
 
 if __name__ == "__main__":
-    app.run()	
+    app.debug = True
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)	
 		
 	
 
