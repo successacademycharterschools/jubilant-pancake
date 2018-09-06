@@ -41,7 +41,12 @@ class Result extends Component {
 
   }
 
-  calculate_edit_dist() {
+  // Tested this with:
+  // v1 = 'intention', v2 = 'execution', expected output = 8
+  // v1 = 'cat', v2 = 'cat', expected output = 0
+  // v1 = 'cat', v2 = 'dog', expected output = 6
+  // v1 = <no input>, v2 = <no input>, expected output = <no output>
+  calculate_min_edit_dist() {
     let v1 = this.props.formValues['val_1'];
     let v2 = this.props.formValues['val_2'];
 
@@ -66,12 +71,13 @@ class Result extends Component {
         if (v1[i-1] !== v2[j-1]){  // if values at same spot are not equal
           added_val = 2;  // cost = 1 to delete and 1 to add correct letter = 2
         }
-
+        
+        // diff edit distance possibilities
         let same_row = matrix[i - 1][j] + 1,
         same_col = matrix[i][j-1] + 1,
         new_vals = matrix[i-1][j-1] + added_val;
 
-        matrix[i][j] = Math.min(same_row, same_col, new_vals);
+        matrix[i][j] = Math.min(same_row, same_col, new_vals);  // min edit distance
         
       }
     }
@@ -80,12 +86,12 @@ class Result extends Component {
   }
 
   render() {
-    let edit_dist = this.calculate_edit_dist();
+    let min_edit_dist = this.calculate_min_edit_dist();
     if (this.props.hidden) {
       return null;
     }
     return (
-      <p>Edit Distance: {edit_dist}</p>
+      <p>Edit Distance: {min_edit_dist}</p>
     );
   }
 }
@@ -111,19 +117,19 @@ class App extends Component {
 
     formValues[name] = value;
 
-    this.setState({formValues})
+    this.setState({formValues});
   }
 
   handleValueSubmit(event) {
     event.preventDefault();
-    this.setState({submitted: true})
+    this.setState({submitted: true});
   }
 
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Edit Distance Calculator</h1>
+          <h1 className="App-title">Minimum Edit Distance Calculator</h1>
         </header>
         <StringInputForm
           formValues={this.state.formValues}
