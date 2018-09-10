@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Michael Dadurian's Jubilant Pancake</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/static/style.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+		
+		<script>
+		
+			$(document).ready( function() {
+                /*
+                Function to send form data to server in JSON form with AJAX. Triggers on form submission. 
+                
+                Upon successful request, parses the JSON response and sets the editDistance element.
+                */
+				$("#mainForm").submit(function(event) {
+					//Prevent form submission from refreshing page
+					event.preventDefault();
+					//Get JSON String for Form Data to be sent to Controller
+				   	var formData = JSON.stringify($("#mainForm").serializeArray());
+				   	console.log(formData);
+				   	$.ajax({
+						type: 'POST',
+						contentType: 'application/json',
+						data: formData,
+						dataType: 'html',
+						url: '/index',
+						success: function (e) {
+							/*
+							Upon successful AJAX call, set the Edit Distance to the response from server.
+							Server sends response in JSON form. Use JSON.parse to extract the Edit Distance
+							*/
+							document.getElementById("editDistance").innerHTML = JSON.parse(e).edit_distance;
+
+						},
+                        
+						error: function(error) {
+                            console.log(error);
+                        }
+					});
+				
+					
+				});
+			});
+		</script>
+    </head>
+	
+    <body>
+		<div class = "container-fluid" >
+			<h1 class=" text-center text-primary" id="h1-compute">Compute Edit Distance</h1>
+			<div class="well">
+				<div class="row">
+					<div class="col-lg-4">
+  
+						<form method='post' name="mainForm" id="mainForm" onsubmit="sendJSON(this)"> 
+							<div class="form-group">
+								<label for="string1"> First String:  </label>
+								</br>
+								<input class="text-primary" type="text" name="string1" id="string1" value={{string1}} >
+								</br></br>
+							</div>
+							
+							<div class="form-group">
+								<label for="string2"> Second String: </label>
+								</br>
+								<input class="text-primary" type="text" name="string2" id="string2" value={{string2}}> 
+								</br></br>
+							</div>
+							
+							<button class="btn btn-primary" type="submit" name = "button" id = "button">Get Edit Distance</button> 
+							</br></br>
+					</div>
+						
+					
+					</form>
+					
+					<div class = "col-lg-4">
+						</br></br>
+						<h4 class="text-center display-1 font-weight-bold">Minimum Number of Operations</h4>
+						<h2 class="text-center"> = </h2>
+					</div>
+					
+					<div class="col-lg-4">
+						</br></br></br></br></br>
+						<h1 class="text-center text-success display-1 font-weight-bold large-fontsize" name = "editDistance" id="editDistance"><span>{{response}}</span></h1>
+					</div>
+				</div>
+			</div>
+		</div>
+    </body>
+</html>

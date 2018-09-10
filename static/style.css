@@ -1,0 +1,10 @@
+.container-fluid{
+	margin:auto;
+	width:50%;
+	padding:10px;
+	
+}
+
+.large-fontsize {
+	font-size:120%;
+}
