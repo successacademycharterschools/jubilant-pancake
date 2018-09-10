@@ -1,11 +1,24 @@
 import os
 from flask import Flask, request, render_template, Response, jsonify, make_response, json
 
+"""
+Flask server to receive two strings from front end index.html in JSON form.
 
+Computes the edit distance between the two strings and returns a JSON response containing the computed value. 
+"""
 
+#Create an instance of imported Flask class. "Name" is the name of application package.
 app = Flask(__name__)
 
 def get_edit_distance(string1, string2, len1, len2):
+    """
+    Use Dynamic Programming to calculate the Edit Distance between two Strings.
+    
+    Takes in two strings and their lengths as arguments. Returns an integer value representing the minimum number of operations
+    needed to convert one string to the other.
+    Initialize a matrix of size len(string1) * len(string2) to store values of previously computed edit distances. 
+    """
+    
 	#Init matrix for DP
     table = [[0 for x in range(len2+1)] for x in range(len1 + 1)]
 	
@@ -36,6 +49,15 @@ def get_edit_distance(string1, string2, len1, len2):
 
 @app.route("/index", methods=["GET", "POST"])
 def index():
+    """
+    Main routing function. 
+    
+    When the user accesses "/index" this function is called. The "route" dectorator binds the "/index" url to
+    this function. Uses both GET and POST HTTP methods when accessing "/index". Upon GET request, this function will
+    simply render the base "index.html" file and return. Upon a POST request, we first confirm that the request is in 
+    JSON form, and if so, we parse the JSON request and retrieve the two strings. We then compute the edit distance and
+    send back a JSON response. If the request is not in JSON form we render the base "index.html" file and return.
+    """
 
     edit_distance = 0
     response = make_response(render_template("index.html", edit_distance = edit_distance))
@@ -69,6 +91,9 @@ def index():
 
 
 if __name__ == "__main__":
+    """
+    Main function, runs the Flask application on localhost:5000.
+    """
     app.debug = True
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)	

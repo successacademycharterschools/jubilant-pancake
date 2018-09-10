@@ -13,7 +13,11 @@
 		<script>
 		
 			$(document).ready( function() {
-			
+                /*
+                Function to send form data to server in JSON form with AJAX. Triggers on form submission. 
+                
+                Upon successful request, parses the JSON response and sets the editDistance element.
+                */
 				$("#mainForm").submit(function(event) {
 					//Prevent form submission from refreshing page
 					event.preventDefault();
@@ -34,9 +38,10 @@
 							document.getElementById("editDistance").innerHTML = JSON.parse(e).edit_distance;
 
 						},
+                        
 						error: function(error) {
-						console.log(error);
-					}
+                            console.log(error);
+                        }
 					});
 				
 					
