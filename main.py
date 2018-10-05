@@ -11,7 +11,7 @@ http://localhost:5000/source/target
 """
 
 from flask import Flask
-from .editd import edit_distance
+from editd import edit_distance
 
 
 def create_app():
