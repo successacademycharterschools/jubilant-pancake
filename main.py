@@ -17,7 +17,7 @@ from editd import edit_distance
 def create_app():
     app = Flask("jubilant-pancake")
 
-    @app.route("/<source>/<target>")
+    @app.route("/editd/<source>/<target>")
     def edit_distance_service(source, target):
         return str(edit_distance(source, target))
 

@@ -14,7 +14,7 @@ def app():
     edit_distance_test_data
 )
 def test_app(client, source, target, distance):
-    resp = client.get('/{}/{}'.format(source, target))
+    resp = client.get('/editd/{}/{}'.format(source, target))
     assert resp.status_code == 200
     assert int(resp.data) == distance, \
         "For strings {}/{}, app returned {} (should be {})".format(
