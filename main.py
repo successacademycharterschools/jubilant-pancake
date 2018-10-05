@@ -13,9 +13,16 @@ http://localhost:5000/source/target
 from flask import Flask
 from .editd import edit_distance
 
-app = Flask("jubilant-pancake")
+
+def create_app():
+    app = Flask("jubilant-pancake")
+
+    @app.route("/<source>/<target>")
+    def edit_distance_service(source, target):
+        return str(edit_distance(source, target))
+
+    return app
 
 
-@app.route("/<source>/<target>")
-def edit_distance_service(source, target):
-    return str(edit_distance(source, target))
+if __name__ == '__main__':
+    create_app()
