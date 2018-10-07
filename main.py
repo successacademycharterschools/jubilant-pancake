@@ -15,11 +15,15 @@ from editd import edit_distance
 
 
 def create_app():
-    app = Flask("jubilant-pancake")
+    app = Flask("jubilant-pancake", static_url_path='/static')
 
     @app.route("/editd/<source>/<target>")
     def edit_distance_service(source, target):
         return str(edit_distance(source, target))
+
+    @app.route("/")
+    def root():
+        return app.send_static_file("index.html")
 
     return app
 
