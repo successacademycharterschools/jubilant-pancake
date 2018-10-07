@@ -40,3 +40,11 @@ def test_app_request(client, source, target, distance):
         "For strings {}/{}, app returned {} (should be {})".format(
             source, target, resp.data, distance
         )
+
+
+def test_app_invalid(client):
+    """500 error is returned when lacking source or target"""
+    assert client.get('/editd?source=foo').status_code == 500
+    assert client.get('/editd?target=bar').status_code == 500
+    assert client.get('/editd?aoeu=dhts').status_code == 500
+    assert client.get('/editd').status_code == 500

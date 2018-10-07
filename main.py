@@ -10,7 +10,7 @@ http://localhost:5000/
 
 """
 
-from flask import Flask, request
+from flask import Flask, request, Response
 from editd import edit_distance
 
 
@@ -23,6 +23,8 @@ def create_app():
 
     @app.route("/editd")
     def edit_distance_request():
+        if 'source' not in request.args or 'target' not in request.args:
+            return Response('Requires source and target', status=500)
         return str(edit_distance(request.args['source'], request.args['target']))
 
     @app.route("/")
