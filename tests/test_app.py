@@ -1,3 +1,5 @@
+"""Tests for the edit distance web service"""
+
 import pytest
 from .data import edit_distance_test_data
 from main import create_app
@@ -15,6 +17,7 @@ def app():
     edit_distance_test_data
 )
 def test_app(client, source, target, distance):
+    """Correct distances are returned when accessing the API endpoint with path syntax"""
     resp = client.get('/editd/{}/{}'.format(source, target))
     assert resp.status_code == 200
     assert int(resp.data) == distance, \
@@ -28,6 +31,7 @@ def test_app(client, source, target, distance):
     edit_distance_test_data
 )
 def test_app_request(client, source, target, distance):
+    """Correct distances are returned when accessing the API endpoint with keyword syntax"""
     resp = client.get('/editd?source={}&target={}'.format(source, target))
     assert request.args['source'] == source
     assert request.args['target'] == target

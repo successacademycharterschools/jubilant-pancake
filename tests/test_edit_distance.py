@@ -1,3 +1,5 @@
+"""Tests for the core edit distance function"""
+
 import pytest
 from editd import edit_distance
 from .data import edit_distance_test_data
