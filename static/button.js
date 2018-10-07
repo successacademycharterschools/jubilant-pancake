@@ -3,9 +3,11 @@ function show_result(result) {
 }
 
 function do_submit() {
-    let src = "editd/" + $("#source").val() + "/" + $("#target").val();
-    console.log("Getting: " + src);
-    $.ajax(src, {
+    $.ajax('editd', {
+        data: {
+            source: $("#source").val(),
+            target: $("#target").val()
+        },
         success: show_result
     });
 }

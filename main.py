@@ -10,7 +10,7 @@ http://localhost:5000/
 
 """
 
-from flask import Flask
+from flask import Flask, request
 from editd import edit_distance
 
 
@@ -20,6 +20,10 @@ def create_app():
     @app.route("/editd/<source>/<target>")
     def edit_distance_service(source, target):
         return str(edit_distance(source, target))
+
+    @app.route("/editd")
+    def edit_distance_request():
+        return str(edit_distance(request.args['source'], request.args['target']))
 
     @app.route("/")
     def root():
