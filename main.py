@@ -2,11 +2,11 @@
 
 For debugging, run like:
 
-FLASK_APP=main.py flask run
+PYTHONPATH=$PWD FLASK_APP=main.py flask run
 
 Then access it at:
 
-http://localhost:5000/source/target
+http://localhost:5000/
 
 """
 
