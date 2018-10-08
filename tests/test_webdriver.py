@@ -10,18 +10,10 @@ pytest --driver Chrome --driver-path /path/to/chromedriver
 
 import pytest
 import time
-from main import create_app
 from .data import edit_distance_test_data
 
 
 SLEEP_LEN = 1
-
-
-# this is also in test_app; can I import fixtures? do I have to?
-@pytest.fixture
-def app():
-    app = create_app()
-    return app
 
 
 @pytest.mark.parametrize(

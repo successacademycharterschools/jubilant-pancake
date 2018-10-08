@@ -2,14 +2,7 @@
 
 import pytest
 from .data import edit_distance_test_data
-from main import create_app
 from flask import request
-
-
-@pytest.fixture
-def app():
-    app = create_app()
-    return app
 
 
 @pytest.mark.parametrize(
