@@ -1,8 +1,10 @@
 function show_result(result) {
+    // Display the result in the #result span
     $("#result").text(result);
 }
 
 function do_submit() {
+    // Submit the source and target to the server, await response
     $("#result").text("");
     $.ajax('editd', {
         data: {
