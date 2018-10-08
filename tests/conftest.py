@@ -1,6 +1,5 @@
 """Common test fixtures and data"""
 
-
 import pytest
 from main import create_app
 
@@ -16,6 +15,19 @@ def app():
     return app
 
 
+lipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et " \
+    "dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex " \
+    "ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat " \
+    "nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim " \
+    "id est laborum."
+
+
+lipshort = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et " \
+    "dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat " \
+    "nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim " \
+    "id est laborum."
+
+
 edit_distance_test_data = [
     ('a', 'a', 0),
     ('a', 'aa', 1),
@@ -25,7 +37,9 @@ edit_distance_test_data = [
     ('foo bar baz', 'foobarbaz', 2),
     ('foo bar baz', 'foo barbaz', 1),
     ('foo bar baz', 'foo barbas', 2),
-    ('foo bar baz', 'foo  barbas', 3)
+    ('foo bar baz', 'foo  barbas', 3),
+    (lipsum, lipshort, 108),
+    (lipsum * 10, lipshort * 10, 1080)
 ]
 """3-tuples of known edit distances
 

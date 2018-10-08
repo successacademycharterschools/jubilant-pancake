@@ -12,9 +12,6 @@ import time
 from .conftest import edit_distance_test_data
 
 
-SLEEP_LEN = 1
-
-
 def test_webdriver(live_server, selenium, distances):
     """All known edit distances are shown correctly in the browser"""
     source, target, distance = distances
@@ -22,7 +19,7 @@ def test_webdriver(live_server, selenium, distances):
     selenium.find_element_by_id('source').send_keys(source)
     selenium.find_element_by_id('target').send_keys(target)
     selenium.find_element_by_id('submit').click()
-    time.sleep(SLEEP_LEN)  # too long?
+    time.sleep(distance // 100 + 1)
     assert int(selenium.find_element_by_id('result').text) == distance
 
 
@@ -37,8 +34,8 @@ def test_webdriver_same_browser(live_server, selenium):
         sourcefield.send_keys(source)
         targetfield.send_keys(target)
         submitbut.click()
-        time.sleep(SLEEP_LEN)
+        time.sleep(distance // 100 + 1)
         assert int(resultdiv.text) == distance
         sourcefield.clear()
         targetfield.clear()
-        time.sleep(SLEEP_LEN)
+        time.sleep(1)
