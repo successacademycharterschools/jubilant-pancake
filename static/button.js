@@ -3,6 +3,7 @@ function show_result(result) {
 }
 
 function do_submit() {
+    $("#result").text("");
     $.ajax('editd', {
         data: {
             source: $("#source").val(),
