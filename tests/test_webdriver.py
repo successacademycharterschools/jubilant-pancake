@@ -8,20 +8,16 @@ pytest --driver Chrome --driver-path /path/to/chromedriver
 """
 
 
-import pytest
 import time
-from .data import edit_distance_test_data
+from .conftest import edit_distance_test_data
 
 
 SLEEP_LEN = 1
 
 
-@pytest.mark.parametrize(
-    ['source', 'target', 'distance'],
-    edit_distance_test_data
-)
-def test_webdriver(live_server, selenium, source, target, distance):
+def test_webdriver(live_server, selenium, distances):
     """All known edit distances are shown correctly in the browser"""
+    source, target, distance = distances
     selenium.get('http://localhost:{}/'.format(live_server.port))
     selenium.find_element_by_id('source').send_keys(source)
     selenium.find_element_by_id('target').send_keys(target)

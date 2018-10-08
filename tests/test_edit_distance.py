@@ -1,16 +1,11 @@
 """Tests for the core edit distance function"""
 
-import pytest
 from editd import edit_distance
-from .data import edit_distance_test_data
 
 
-@pytest.mark.parametrize(
-    ['source', 'target', 'distance'],
-    edit_distance_test_data
-)
-def test_edit_distance(source, target, distance):
+def test_edit_distance(distances):
     """Edit distance is correct for known strings"""
+    source, target, distance = distances
     observed = edit_distance(source, target)
     assert observed == distance, \
         "Strings {} and {} should have edit distance {}; got {}".format(
