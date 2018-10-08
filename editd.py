@@ -26,7 +26,10 @@ _edit_distance_recursive.hint = {}
 
 def edit_distance(a, b):
     """Hinted Levenshtein algorithm for edit distance"""
-    return _edit_distance_recursive(a, b, len(a), len(b))
+    if (a, b, len(a), len(b)) not in _edit_distance_recursive.hint:
+        for i in reversed(range(min((len(a)-1, len(b)-1)), -1, -1)):
+            _edit_distance_recursive(a, b, len(a)-i, len(b)-i)
+    return _edit_distance_recursive.hint[a, b, len(a), len(b)]
 
 
 __all__ = ['edit_distance']
