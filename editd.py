@@ -1,13 +1,13 @@
 """Functions for computing edit distance
 
-Currently this exports only the ``edit_distance`` function, which is an
-implementation of the Levenshtein algorithm.
+Currently this exports only the ``edit_distance`` function, which calculates
+Levenshtein distance
 
 """
 
 
 def edit_distance(a, b):
-    """Levenshtein algorithm for edit distance"""
+    """Compute the Levenshtein distance to edit ``a`` so it equals ``b``"""
     d = [[]] * (len(a) + 1)
     # fill the edges with the possibility of inserting/dropping all characters
     for i in range(len(a)+1):
