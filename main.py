@@ -15,6 +15,7 @@ from editd import edit_distance
 
 
 def create_app():
+    """Create and return a Flask app for computing edit distance"""
     app = Flask("jubilant-pancake", static_url_path='/static')
 
     @app.route("/editd/<source>/<target>")
