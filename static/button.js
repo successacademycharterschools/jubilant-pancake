@@ -1,11 +1,13 @@
 function show_result(result) {
     // Display the result in the #result span
-    $("#result").text(result);
+    $("#submit").removeAttr("disabled");
+    $("#result").val(result);
 }
 
 function do_submit() {
     // Submit the source and target to the server, await response
-    $("#result").text("");
+    $("#result").val("");
+    $("#submit").attr("disabled", "");
     $.ajax('editd', {
         data: {
             source: $("#source").val(),

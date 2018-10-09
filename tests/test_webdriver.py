@@ -20,7 +20,7 @@ def test_webdriver(live_server, selenium, distances):
     selenium.find_element_by_id('target').send_keys(target)
     selenium.find_element_by_id('submit').click()
     time.sleep(distance // 100 + 1)
-    assert int(selenium.find_element_by_id('result').text) == distance
+    assert int(selenium.find_element_by_id('result').get_attribute("value")) == distance
 
 
 def test_webdriver_same_browser(live_server, selenium):
@@ -35,7 +35,7 @@ def test_webdriver_same_browser(live_server, selenium):
         targetfield.send_keys(target)
         submitbut.click()
         time.sleep(distance // 100 + 1)
-        assert int(resultdiv.text) == distance
+        assert int(resultdiv.get_attribute("value")) == distance
         sourcefield.clear()
         targetfield.clear()
         time.sleep(1)
