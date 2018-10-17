@@ -3,11 +3,6 @@ import './App.css';
 import {Form} from './Form';
 
 class App extends Component {
-
-	handleSubmit(event){
-
-	}
-
   render() {
     return (
       <div className="App">
