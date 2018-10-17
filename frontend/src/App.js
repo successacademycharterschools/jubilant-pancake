@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
-import {Input} from './Input'
+import {Form} from './Form';
 
 class App extends Component {
+
+	handleSubmit(event){
+
+	}
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
 		Welcome to the Jubilant Pancake
         </header>
-		<body>
-			<div className="App-body">
-				<Input/>
-				<Input/>
-			</div>
-		</body>
+		<div className="App-body">
+			<Form/>
+		</div>
       </div>
     );
   }
