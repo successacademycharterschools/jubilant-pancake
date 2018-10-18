@@ -8,11 +8,19 @@ export class Form extends Component {
 	constructor(props){
 		super(props);	
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.state = {
+			result :"no result yet!"
+		};
 	}
 	handleSubmit(event){
-		console.log("todo");
 		axios.get("http://localhost:5000")
-			.then(response => console.log(response));
+			.then(
+				response => {
+					console.log(response);
+					this.setState({
+						result: 'got something2'
+					});
+			});
 	}
 	render(){
 		return (
@@ -20,6 +28,7 @@ export class Form extends Component {
 				 <Input default="string_one" />
 				 <Input default="string_two" />
 				 <input type="button" value="Submit" onClick={this.handleSubmit} />
+			<label >{this.state.result}</label>
 			</form>
 		);
 	}
