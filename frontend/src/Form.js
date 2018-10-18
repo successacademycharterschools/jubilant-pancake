@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import {Input} from './Input';
 
+//react http library
+import axios from 'axios';
+
 export class Form extends Component {
 	constructor(props){
 		super(props);	
@@ -8,6 +11,8 @@ export class Form extends Component {
 	}
 	handleSubmit(event){
 		console.log("todo");
+		axios.get("http://localhost:5000")
+			.then(response => console.log(response));
 	}
 	render(){
 		return (
