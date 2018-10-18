@@ -23,7 +23,6 @@ export class Form extends Component {
 		})
 			.then(
 				response => {
-					console.log(response);
 					this.setState({
 						result: response.data.result
 					});
